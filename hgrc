@@ -1,0 +1,28 @@
+[ui]
+username=Phil Gyford <phil@gyford.com>
+verbose = True
+editor = vim
+merge = vim
+#editor = mvim --nofork
+#merge = mvim
+# SublimeText doesn't seem to work.
+# editor = subl --nofork
+# merge = subl
+
+ignore=/Users/phil/.hgignore_global
+[extensions]
+fetch =
+[merge-tools]
+sourcetreemerge.gui=False
+sourcetreebulkmerge.gui=False
+sourcetreemerge.binary=False
+sourcetreebulkmerge.executable=/Applications/SourceTree.app/Contents/Resources/hg-merge.sh
+sourcetreemerge.args=$local $other -ancestor $base -merge $output
+sourcetreemerge.checkconflicts=True
+sourcetreemerge.premerge=True
+sourcetreemerge.executable=/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh
+sourcetreebulkmerge.premerge=False
+sourcetreebulkmerge.binary=True
+[extdiff]
+cmd.sourcetreediff=opendiff
+opts.sourcetreediff=
