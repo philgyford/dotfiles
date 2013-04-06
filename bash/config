@@ -1,0 +1,30 @@
+
+
+## PROMPT
+
+# Via http://unix.stackexchange.com/a/31697
+reset=$(tput sgr0)
+bold=$(tput bold)
+white=$(tput setaf 7)
+PS1='\[$white\]\u@\h:\W \$ \[$reset\]'
+
+PROMPT_COMMAND='history -a'
+
+
+## HISTORY
+
+# From http://blog.macromates.com/2008/working-with-history-in-bash/
+# Removes duplicates.
+export HISTCONTROL=erasedups
+# Increases history size.
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000
+# Adds history from a session to .bash_history on exit.
+shopt -s histappend
+
+
+## MISC
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
