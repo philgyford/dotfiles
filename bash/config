@@ -1,12 +1,24 @@
 
+## RVM for PROMPT
+## Add `$(parse_rvm_version)` to the prompt to display the current
+## version of Ruby.
+function parse_rvm_version {
+ local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
+ [ "$gemset" != "" ] && gemset="@$gemset"
+ local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
+ [ "$version" != "" ] && version="$version"
+ local full="$version$gemset"
+ [ "$full" != "" ] && echo "$full "
+}
+
 
 ## PROMPT
 
-# Via http://unix.stackexchange.com/a/31697
+# Color stuff via http://unix.stackexchange.com/a/31697
 reset=$(tput sgr0)
 bold=$(tput bold)
 white=$(tput setaf 7)
-PS1='\[$white\]\u@\h:\W \$ \[$reset\]'
+PS1='\[$white\]\u@\h:\W $(parse_rvm_version)\$ \[$reset\]'
 
 PROMPT_COMMAND='history -a'
 
