@@ -18,7 +18,7 @@ function parse_rvm_version {
 reset=$(tput sgr0)
 bold=$(tput bold)
 white=$(tput setaf 7)
-PS1='\[$white\]\u@\h:\W $(parse_rvm_version)\$ \[$reset\]'
+PS1='\[$white\]\u@\h \w $(parse_rvm_version)\n\$ \[$reset\]'
 
 PROMPT_COMMAND='history -a'
 
