@@ -32,15 +32,22 @@ PATH=$PATH:$HOME/.rvm/bin
 
 ## PYTHON
 
+# Using http://docs.python-guide.org/en/latest/starting/install/osx.html
+
+# For Homebrew-installed python.
+export PATH=/usr/local/share/python:$PATH
+
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper.sh
+
 # Tell pip to create its virtualenvs in $WORKON_HOME.
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 # Tell pip to automatically use the currently active virtualenv.
 export PIP_RESPECT_VIRTUALENV=true 
 
 # For CLW RotaMC
-export PYTHONPATH='/Users/phil/Projects/CLW/clwpy'
+#export PYTHONPATH='/Users/phil/Projects/CLW/clwpy'
 
 # To get OpenCV working.
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
