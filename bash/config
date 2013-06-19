@@ -11,6 +11,25 @@ function parse_rvm_version {
  [ "$full" != "" ] && echo "$full "
 }
 
+## GIT for PROMPT
+## From http://oliverdavies.co.uk/blog/2013/04/27/display-git-branch-or-tag-names-your-bash-prompt
+
+parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+parse_git_tag () {
+  git describe --tags 2> /dev/null
+}
+
+parse_git_branch_or_tag() {
+  local OUT="$(parse_git_branch)"
+  if [ "$OUT" == " ((no branch))" ]; then
+    OUT="($(parse_git_tag))";
+  fi
+  echo $OUT
+}
+
 
 ## PROMPT
 
@@ -18,7 +37,7 @@ function parse_rvm_version {
 reset=$(tput sgr0)
 bold=$(tput bold)
 white=$(tput setaf 7)
-PS1='\[$white\]\u@\h \w $(parse_rvm_version)\n\$ \[$reset\]'
+PS1='\[$white\]\u@\h \w $(parse_git_branch_or_tag) $(parse_rvm_version)\n\$ \[$reset\]'
 
 PROMPT_COMMAND='history -a'
 
