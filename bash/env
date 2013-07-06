@@ -9,6 +9,10 @@ export EDITOR='subl -w'
 # For node.js (installed with homebrew).
 export NODE_PATH='/usr/local/lib/node_modules'
 
+# Generated after installing NVM <https://github.com/creationix/nvm> by doing:
+# curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+[[ -s /Users/phil/.nvm/nvm.sh ]] && . /Users/phil/.nvm/nvm.sh # This loads NVM
+
 
 ## PATH
 
