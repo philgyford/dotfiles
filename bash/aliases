@@ -43,7 +43,7 @@ alias cls='clear'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
-alias ....='cd ../../..' # Go up two directories
+alias ....='cd ../../..' # Go up three directories
 alias -- -="cd -"        # Go back
 
 # Directory
@@ -107,3 +107,21 @@ case $OSTYPE in
     ;;
 esac
 
+
+alias be='bundle exec'
+
+########################################################################
+# Run `bundle exec` before certain Ruby commands, if there's a Gemfile.
+# http://marc-bowes.com/2011/09/21/dry-your-bundle-exec-tears.html
+#bundle_commands="rake ruby spec rspec cucumber cap watchr rails rackup"
+#function run_bundler_cmd () {
+    #if [ -r ./Gemfile ]; then
+        #bundle exec $@
+    #else
+        #$@
+    #fi
+#}
+#for cmd in $bundle_commands
+#do
+    #alias $cmd="run_bundler_cmd $cmd"
+#done
