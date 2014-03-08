@@ -4,9 +4,8 @@
 alias baked="ssh -l phil baked.haddock.org"
 alias plum="ssh -l philg plum.flirble.org"
 
-alias cloudview="ssh -l philgyford cloudview.joyent.us"
-alias butte="ssh -l philgyford butte.joyent.us"
 alias price="ssh -l philgyford price.textdrive.us"
+alias webfaction="ssh -l philgyford web441.webfaction.com"
 
 alias spacebar="telnet spacebar.com 7227"
 
