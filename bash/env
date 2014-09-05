@@ -32,8 +32,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
 #export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 
-# Add RVM to PATH for scripting
-PATH=$HOME/.rvm/bin:$PATH
+
+## RUBY
+
+eval "$(rbenv init -)"
+
 
 ## PYTHON
 
