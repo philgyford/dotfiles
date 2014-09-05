@@ -56,9 +56,9 @@ alias m='./manage.py'
 
 ## RVM
 
-function r() {
- [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" && echo "Loading RVM"
-}
+#function r() {
+ #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" && echo "Loading RVM"
+#}
 
 ########################################################################
 # GIT ALIASES originally from
