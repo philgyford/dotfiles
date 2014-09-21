@@ -2,13 +2,17 @@
 ## RVM for PROMPT
 ## Add `$(parse_rvm_version)` to the prompt to display the current
 ## version of Ruby.
-function parse_rvm_version {
- local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
- [ "$gemset" != "" ] && gemset="@$gemset"
- local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
- [ "$version" != "" ] && version="$version"
- local full="$version$gemset"
- [ "$full" != "" ] && echo "$full "
+#function parse_rvm_version {
+ #local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
+ #[ "$gemset" != "" ] && gemset="@$gemset"
+ #local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
+ #[ "$version" != "" ] && version="$version"
+ #local full="$version$gemset"
+ #[ "$full" != "" ] && echo "$full "
+#}
+
+parse_rbenv_version () {
+  rbenv version | sed -e 's/ .*//'
 }
 
 ## GIT for PROMPT
@@ -37,7 +41,7 @@ parse_git_branch_or_tag() {
 reset=$(tput sgr0)
 bold=$(tput bold)
 white=$(tput setaf 7)
-PS1='\[$white\]\u@\h \w $(parse_git_branch_or_tag) $(parse_rvm_version)\n\$ \[$reset\]'
+PS1='\[$white\]\u@\h \w $(parse_git_branch_or_tag) $(parse_rbenv_version)\n\$ \[$reset\]'
 
 PROMPT_COMMAND='history -a'
 
