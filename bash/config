@@ -62,7 +62,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 reset=$(tput sgr0)
 bold=$(tput bold)
 white=$(tput setaf 7)
-PS1='$(parse_virtualenv)\[$white\]\u@\h \w $(parse_git_branch_or_tag) $(parse_rbenv_version)\n\$ \[$reset\]'
+PS1='$(parse_virtualenv)\[$white\]\u@\h \w $(parse_git_branch_or_tag) \[$reset\]$(parse_rbenv_version)\n\[$white\]\$ \[$reset\]'
 
 PROMPT_COMMAND='history -a'
 
