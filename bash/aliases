@@ -54,12 +54,6 @@ alias h='heroku'
 alias m='./manage.py'
 
 
-## RVM
-
-#function r() {
- #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" && echo "Loading RVM"
-#}
-
 ########################################################################
 # GIT ALIASES originally from
 # https://github.com/revans/bash-it/blob/master/aliases/available/git.aliases.bash
