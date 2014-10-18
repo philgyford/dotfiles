@@ -17,3 +17,9 @@ Icon?
 Thumbs.db
 *~
 
+
+# Other #
+#########
+
+# rbenv
+.ruby-version
