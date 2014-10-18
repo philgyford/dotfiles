@@ -1,73 +1,7 @@
+# Miscellaneous configuration things.
 
-## RVM for PROMPT
-## Add `$(parse_rvm_version)` to the prompt to display the current
-## version of Ruby.
-#function parse_rvm_version {
- #local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
- #[ "$gemset" != "" ] && gemset="@$gemset"
- #local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
- #[ "$version" != "" ] && version="$version"
- #local full="$version$gemset"
- #[ "$full" != "" ] && echo "$full "
-#}
-
-## RBENV for PROMPT
-# Display the current version or nothing if we're using system ruby.
-parse_rbenv_version () {
-  local OUT=""
-  if [[ `rbenv version` =~ ^system.*$ ]]; then
-    OUT="";
-  else
-    OUT=`rbenv version | sed -e 's/ .*//'`
-  fi
-  echo $OUT
-}
-
-## GIT for PROMPT
-## From http://oliverdavies.co.uk/blog/2013/04/27/display-git-branch-or-tag-names-your-bash-prompt
-
-parse_git_branch () {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-parse_git_tag () {
-  git describe --tags 2> /dev/null
-}
-
-parse_git_branch_or_tag() {
-  local OUT="$(parse_git_branch)"
-  if [ "$OUT" == " ((no branch))" ]; then
-    OUT="($(parse_git_tag))";
-  fi
-  echo $OUT
-}
-
-## VIRTUALENV for PROMPT
-# Replicating the default virtualenvwrapper prompt, because the RBENV stuff
-# seemed to conflict with it.
-parse_virtualenv(){
-  local OUT=""
-  if [[ -n "$VIRTUAL_ENV" ]]; then
-    OUT="(`basename $VIRTUAL_ENV`)";
-  fi
-  echo $OUT
-}
-
-# disable the default virtualenv prompt change
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-## PROMPT
-
-# Color stuff via http://unix.stackexchange.com/a/31697
-reset=$(tput sgr0)
-bold=$(tput bold)
-white=$(tput setaf 7)
-PS1='$(parse_virtualenv)\[$white\]\u@\h \w $(parse_git_branch_or_tag) \[$reset\]$(parse_rbenv_version)\n\[$white\]\$ \[$reset\]'
-
-PROMPT_COMMAND='history -a'
-
-
-## HISTORY
+##############################################################################
+# HISTORY
 
 # From http://blog.macromates.com/2008/working-with-history-in-bash/
 # Removes duplicates.
@@ -78,9 +12,26 @@ export HISTSIZE=1000000
 # Adds history from a session to .bash_history on exit.
 shopt -s histappend
 
+# Make new shells get the history lines from all previous
+# shells instead of the default "last window closed" history
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-## MISC
+
+##############################################################################
+# set 256 color profile where possible
+
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+	export TERM='gnome-256color';
+elif infocmp xterm-256color >/dev/null 2>&1; then
+	export TERM='xterm-256color';
+fi;
+
+
+##############################################################################
+# MISC
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
