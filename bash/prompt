@@ -20,14 +20,14 @@ prompt_rbenv () {
 
 ##############################################################################
 # NVM 
-# Display the current version of Node or nothing.
+# Display the current version of NVM's Node or nothing.
 
 prompt_nvm () {
   local s=""
-  if [[ `nvm current` == "none" ]]; then
-    s+="";
+  if [ `nvm current` == "none" ] || [ `nvm current` == "system" ]; then
+	s+="";
   else
-    s+="${1}$(nvm current | sed -e 's/ .*//')"
+	s+="${1}$(nvm current | sed -e 's/ .*//')"
   fi
   echo -e "${s}"
 }
