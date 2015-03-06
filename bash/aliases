@@ -87,7 +87,7 @@ alias gdel='git branch -D'
 alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gll='git log --oneline --decorate --graph'
 alias gr='git remote -v'
-alias gg='git grep -in'
+alias gg='git grep --ignore-case --line-number --untracked --exclude-standard'
 
 case $OSTYPE in
   linux*)
