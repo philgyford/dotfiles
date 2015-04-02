@@ -7,3 +7,8 @@
 	excludesfile = /Users/phil/.gitignore_global
 [color]
 	ui = true
+# Added by GitHub for Mac:
+[filter "hawser"]
+        clean = git hawser clean %f
+        smudge = git hawser smudge %f
+        required = true
