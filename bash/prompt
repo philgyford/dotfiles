@@ -10,10 +10,13 @@
 
 prompt_rbenv () {
   local s=""
-  if [[ `rbenv version` =~ ^system.*$ ]]; then
-    s+="";
-  else
-    s+="${1}$(rbenv version | sed -e 's/ .*//')"
+  # Only do this if the rbenv command exists:
+  if hash rbenv 2>/dev/null; then
+    if [[ `rbenv version` =~ ^system.*$ ]]; then
+      s+="";
+    else
+      s+="${1}$(rbenv version | sed -e 's/ .*//')"
+    fi
   fi
   echo -e "${s}"
 }
@@ -24,10 +27,13 @@ prompt_rbenv () {
 
 prompt_nvm () {
   local s=""
-  if [ `nvm current` == "none" ] || [ `nvm current` == "system" ]; then
-	s+="";
-  else
-	s+="${1}$(nvm current | sed -e 's/ .*//')"
+  # Only do this if the nvm command exists:
+  if hash nvm 2>/dev/null; then
+    if [ `nvm current` == "none" ] || [ `nvm current` == "system" ]; then
+      s+="";
+    else
+      s+="${1}$(nvm current | sed -e 's/ .*//')"
+    fi
   fi
   echo -e "${s}"
 }
