@@ -8,6 +8,7 @@ alias price="ssh -l philgyford price.textdrive.us"
 alias webfaction="ssh -l philgyford web441.webfaction.com"
 
 alias spacebar="telnet spacebar.com 7227"
+alias baymoo="telnet baymoo.org 8888"
 
 
 ########################################################################
