@@ -64,15 +64,18 @@ alias ga='git add'
 alias gall='git add --all .'
 alias g='git'
 alias get='git'
-alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
+# Lists all files that can be added, not just top-level directories/files like
+# git status:
+alias gsall='git ls-files -o --exclude-standard'
 alias gl='git pull'
 alias glo='git pull origin'
 alias gup='git fetch && git rebase'
 alias gp='git push'
 alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
+alias gdn='git diff --name-status' # Just list name and status of changed files.
 alias gc='git commit'
 alias gca='git commit -a'
 # alias gc='git commit -v'
@@ -95,7 +98,7 @@ case $OSTYPE in
     alias gd='git diff | vim -R -'
     ;;
   darwin*)
-    alias gd='git diff | subl'
+    alias gd='git diff | mvim'
     ;;
   darwin*)
     alias gd='git diff'
