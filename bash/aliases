@@ -56,6 +56,23 @@ alias m='./manage.py'
 
 
 ########################################################################
+# If Highlight syntax-highlighting is installed.
+# http://www.andre-simon.de/doku/highlight/en/highlight.php
+#
+# Takes content from clipboard, turns it into syntax-highlighted RTF
+# and puts that back on the clipboard, highlighted as the supplied syntax.
+#
+# eg:
+#   hilite html
+#   hilite js
+
+hilite() {
+    pbpaste | highlight --style=solarized-light --tab=2 --font='Monaco' --font-size=36 -O rtf --syntax=$1 | pbcopy
+}
+alias hilite=hilite
+
+
+########################################################################
 # GIT ALIASES originally from
 # https://github.com/revans/bash-it/blob/master/aliases/available/git.aliases.bash
 
