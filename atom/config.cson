@@ -35,3 +35,28 @@
   "vim-mode": {}
   welcome:
     showOnStartup: false
+".basic.html.text":
+  editor:
+    preferredLineLength: 79
+".console.python.text":
+  editor:
+    preferredLineLength: 79
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 79
+".js.regexp.source":
+  editor:
+    preferredLineLength: 79
+".js.source":
+  editor:
+    preferredLineLength: 79
+    tabLength: 2
+".python.regexp.source":
+  editor:
+    preferredLineLength: 79
+".python.source":
+  editor:
+    preferredLineLength: 79
+".python.text.traceback":
+  editor:
+    preferredLineLength: 79
