@@ -1,0 +1,10 @@
+storage
+compile-cache
+dev
+.npm
+.node-gyp
+
+# Added by Phil:
+packages
+.apm
+# End added by Phil.

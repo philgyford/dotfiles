@@ -1,0 +1,37 @@
+"*":
+  core:
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      ".*.un~"
+    ]
+    projectHome: "/Users/phil/Projects"
+    themes: [
+      "atom-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontFamily: "Monaco"
+    fontSize: 11
+    invisibles: {}
+    preferredLineLength: 79
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "619f9c36-fe0f-6f6b-67df-ba795291539b"
+  "linter-js-standard":
+    style: "semi-standard"
+  "linter-pep8": {}
+  "linter-sass-lint": {}
+  "linter-tidy": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
