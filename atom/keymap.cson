@@ -51,9 +51,6 @@
     '>': 'editor:indent-selected-rows'
     '<': 'editor:outdent-selected-rows'
 
-# Like Command-t:
-'.platform-darwin, .platform-darwin .command-palette atom-text-editor':
-    ', t': 'command-palette:toggle'
-
 '.platform-darwin':
     ', d': 'tree-view:toggle'
+    ', t': 'fuzzy-finder:toggle-file-finder'

@@ -8,7 +8,8 @@
       "._*"
       ".*.un~"
     ]
-    projectHome: "/Users/phil/Projects"
+    openEmptyEditorOnStart: false
+    projectHome: "/Users/phil/Projects/personal"
     themes: [
       "atom-light-ui"
       "solarized-light-syntax"
@@ -16,14 +17,17 @@
   editor:
     fontFamily: "Monaco"
     fontSize: 11
-    invisibles: {}
+    invisibles:
+      tab: "▸"
     preferredLineLength: 79
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
     tabLength: 4
   "exception-reporting":
     userId: "619f9c36-fe0f-6f6b-67df-ba795291539b"
+  "fuzzy-finder": {}
   "linter-js-standard":
     style: "semi-standard"
   "linter-pep8": {}
