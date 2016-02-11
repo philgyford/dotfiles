@@ -33,6 +33,13 @@
   "linter-pep8": {}
   "linter-sass-lint": {}
   "linter-tidy": {}
+  pigments:
+    supportedFiletypes: [
+      "css"
+      "sass"
+      "less"
+      "scss"
+    ]
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
