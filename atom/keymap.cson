@@ -54,3 +54,6 @@
     ', d': 'tree-view:toggle'
     ', t': 'fuzzy-finder:toggle-file-finder'
     'cmd-t': 'application:new-file'
+
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  '': 'ex-mode:open'
