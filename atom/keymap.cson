@@ -45,6 +45,8 @@
     '\\ t': 'tabs-to-spaces:tabify'
     '\\ s': 'tabs-to-spaces:untabify'
 
+    ';': 'ex-mode:open'
+
 'atom-text-editor.vim-mode.visual-mode':
     # Keep blocks selected when indenting/outdenting:
     '>': 'editor:indent-selected-rows'
@@ -54,6 +56,3 @@
     ', d': 'tree-view:toggle'
     ', t': 'fuzzy-finder:toggle-file-finder'
     'cmd-t': 'application:new-file'
-
-'atom-text-editor.vim-mode:not(.insert-mode)':
-  '': 'ex-mode:open'
