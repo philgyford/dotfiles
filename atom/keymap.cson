@@ -26,7 +26,6 @@
 
 
 #############################################################################
-# Adding keybindings from my .vimrc:
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
     ', l': 'settings:toggle-show-invisibles'
@@ -54,3 +53,4 @@
 '.platform-darwin':
     ', d': 'tree-view:toggle'
     ', t': 'fuzzy-finder:toggle-file-finder'
+    'cmd-t': 'application:new-file'

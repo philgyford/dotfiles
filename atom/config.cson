@@ -1,5 +1,8 @@
 "*":
   core:
+    disabledPackages: [
+      "background-tips"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
