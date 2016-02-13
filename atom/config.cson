@@ -22,7 +22,6 @@
     preferredLineLength: 79
     scrollPastEnd: true
     showIndentGuide: true
-    showInvisibles: true
     softWrap: true
     tabLength: 4
   "exception-reporting":
