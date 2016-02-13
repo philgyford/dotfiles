@@ -1,0 +1,15 @@
+packages: [
+  "color-picker"
+  "ex-mode"
+  "linter"
+  "linter-js-standard"
+  "linter-pep8"
+  "linter-sass-lint"
+  "linter-tidy"
+  "package-sync"
+  "pigments"
+  "tabs-to-spaces"
+  "trailing-spaces"
+  "vim-mode"
+  "vim-mode-zz"
+]
