@@ -2,8 +2,9 @@
 	name = Phil Gyford
 	email = phil@gyford.com
 [core]
-	editor = mvim --nofork
 	#editor = subl -w
+	#editor = mvim --nofork
+	editor = atom --wait
 	excludesfile = /Users/phil/.gitignore_global
 [color]
 	ui = true
