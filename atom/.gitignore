@@ -4,7 +4,9 @@ dev
 .npm
 .node-gyp
 
+
 # Added by Phil:
 packages
 .apm
+blob-store
 # End added by Phil.
