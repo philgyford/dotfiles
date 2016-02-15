@@ -73,3 +73,7 @@
 ".python.text.traceback":
   editor:
     preferredLineLength: 79
+".source.yaml":
+  editor:
+    preferredLineLength: 79
+    tabLength: 2

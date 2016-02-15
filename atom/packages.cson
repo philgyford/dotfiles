@@ -8,6 +8,7 @@ packages: [
   "linter-tidy"
   "package-sync"
   "pigments"
+  "relative-numbers"
   "tabs-to-spaces"
   "trailing-spaces"
   "vim-mode"
