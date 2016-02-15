@@ -37,23 +37,5 @@ eval "$(rbenv init -)"
 
 ## PYTHON
 
-export WORKON_HOME=$HOME/.virtualenvs
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-# Tell pip to create its virtualenvs in here:
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-# Tell pip to automatically use the currently active virtualenv.
-export PIP_RESPECT_VIRTUALENV=true
-
-# From http://hackercodex.com/guide/python-development-environment-on-mac-osx/
-# If you want to install something with pip globally, you won't be able
-# to because of PIP_RESPECT_VIRTUALENV.
-# So instead, use this command, gpip:
-gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
