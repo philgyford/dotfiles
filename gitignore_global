@@ -18,5 +18,8 @@ Thumbs.db
 # Other #
 #########
 
+# pyenv
+.python-version
+
 # rbenv
 .ruby-version
