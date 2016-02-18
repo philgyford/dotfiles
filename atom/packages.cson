@@ -13,4 +13,5 @@ packages: [
   "trailing-spaces"
   "vim-mode"
   "vim-mode-zz"
+  "vim-surround"
 ]
