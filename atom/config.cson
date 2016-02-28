@@ -2,6 +2,8 @@
   core:
     disabledPackages: [
       "background-tips"
+      "linter-pep8"
+      "linter-pylint"
     ]
     ignoredNames: [
       ".git"
@@ -44,7 +46,6 @@
     ]
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
