@@ -32,6 +32,9 @@
 
     ', c space': 'editor:toggle-line-comments'
 
+    # There's no find-and-replace:hide
+    ', space': 'find-and-replace:toggle'
+
     ', W': 'pane:split-down'
     ', w': 'pane:split-right'
 
