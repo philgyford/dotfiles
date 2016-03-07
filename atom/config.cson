@@ -12,6 +12,8 @@
       ".DS_Store"
       "._*"
       ".*.un~"
+      "*.swp"
+      "*.swo"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/phil/Projects/personal"
