@@ -3,8 +3,8 @@
 	email = phil@gyford.com
 [core]
 	#editor = subl -w
-	#editor = mvim --nofork
-	editor = atom --wait
+	editor = mvim --nofork
+	#editor = atom --wait
 	excludesfile = /Users/phil/.gitignore_global
 [color]
 	ui = true
