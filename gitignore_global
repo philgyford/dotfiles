@@ -2,6 +2,7 @@
 ##############
 *.pyc
 *.sw*
+*.sv*
 *.phpe
 
 
@@ -23,3 +24,7 @@ Thumbs.db
 
 # rbenv
 .ruby-version
+
+# tox. Obvs.
+.tox
+.eggs
