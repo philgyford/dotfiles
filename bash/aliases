@@ -1,10 +1,6 @@
 ########################################################################
 # ALIASES for servers, databases, etc
 
-alias baked="ssh -l phil baked.haddock.org"
-alias plum="ssh -l philg plum.flirble.org"
-
-alias price="ssh -l philgyford price.textdrive.us"
 alias webfaction="ssh -l philgyford web441.webfaction.com"
 
 alias spacebar="telnet spacebar.com 7227"
