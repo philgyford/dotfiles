@@ -50,6 +50,9 @@ alias h='heroku'
 
 alias m='./manage.py'
 
+# List all open network connections:
+alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
+
 
 ########################################################################
 # If Highlight syntax-highlighting is installed.
