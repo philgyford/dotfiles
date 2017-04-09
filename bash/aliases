@@ -1,7 +1,7 @@
 ########################################################################
 # ALIASES for servers, databases, etc
 
-alias webfaction="ssh -l philgyford web441.webfaction.com"
+alias webfaction="ssh -l philgyford web573.webfaction.com"
 
 alias spacebar="telnet spacebar.com 7227"
 alias baymoo="telnet baymoo.org 8888"
@@ -52,6 +52,11 @@ alias m='./manage.py'
 
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
+
+
+# pyenv
+alias pya='pyenv activate'
+alias pyd='pyenv deactivate'
 
 
 ########################################################################
