@@ -17,6 +17,7 @@
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/phil/Projects/personal"
+    telemetryConsent: "no"
     themes: [
       "atom-light-ui"
       "solarized-light-syntax"
