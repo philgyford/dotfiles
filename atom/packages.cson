@@ -13,6 +13,7 @@ packages: [
   "relative-numbers"
   "tabs-to-spaces"
   "trailing-spaces"
+  "tree-view-git-status"
   "vim-mode-plus"
   "vim-mode-plus-ex-mode"
   "vim-mode-zz"
