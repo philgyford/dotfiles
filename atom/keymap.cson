@@ -27,7 +27,7 @@
 
 #############################################################################
 
-'atom-text-editor.vim-mode:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
     ', l': 'settings:toggle-show-invisibles'
 
     ', c space': 'editor:toggle-line-comments'
@@ -48,9 +48,11 @@
     '\\ t': 'tabs-to-spaces:tabify'
     '\\ s': 'tabs-to-spaces:untabify'
 
-    ';': 'ex-mode:open'
 
-'atom-text-editor.vim-mode.visual-mode':
+'atom-text-editor.vim-mode-plus.normal-mode':
+    ';': 'vim-mode-plus-ex-mode:open'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
     # Keep blocks selected when indenting/outdenting:
     '>': 'editor:indent-selected-rows'
     '<': 'editor:outdent-selected-rows'
