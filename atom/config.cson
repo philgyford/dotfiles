@@ -35,11 +35,15 @@
   "exception-reporting":
     userId: "619f9c36-fe0f-6f6b-67df-ba795291539b"
   "fuzzy-finder": {}
-  "linter-js-standard":
-    style: "semi-standard"
+  "linter-js-standard": {}
   "linter-pep8": {}
   "linter-sass-lint": {}
   "linter-tidy": {}
+  "linter-xo":
+    fixOnSave: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments:
     supportedFiletypes: [
       "css"
