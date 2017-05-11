@@ -23,11 +23,11 @@
       "solarized-light-syntax"
     ]
   editor:
-    fontFamily: "Monaco"
+    fontFamily: "Fira Code"
     fontSize: 11
     invisibles:
       tab: "▸"
-    preferredLineLength: 79
+    lineHeight: 1.2
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
