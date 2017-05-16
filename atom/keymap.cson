@@ -38,6 +38,9 @@
     ', W': 'pane:split-down'
     ', w': 'pane:split-right'
 
+    ', d': 'tree-view:toggle'
+    ', t': 'fuzzy-finder:toggle-file-finder'
+
     'ctrl-k': 'window:focus-pane-above'
     'ctrl-j': 'window:focus-pane-below'
     'ctrl-h': 'window:focus-pane-on-left'
@@ -58,6 +61,4 @@
     '<': 'editor:outdent-selected-rows'
 
 '.platform-darwin':
-    ', d': 'tree-view:toggle'
-    ', t': 'fuzzy-finder:toggle-file-finder'
     'cmd-t': 'application:new-file'
