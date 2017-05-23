@@ -35,8 +35,8 @@
     # There's no find-and-replace:hide
     ', space': 'find-and-replace:toggle'
 
-    ', W': 'pane:split-down'
-    ', w': 'pane:split-right'
+    ', W': 'pane:split-down-and-copy-active-item'
+    ', w': 'pane:split-right-and-copy-active-item'
 
     ', d': 'tree-view:toggle'
     ', t': 'fuzzy-finder:toggle-file-finder'
