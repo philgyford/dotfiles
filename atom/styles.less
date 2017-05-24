@@ -15,11 +15,6 @@
  * (To see them, uncomment and save)
  */
 
-// style the background color of the tree view
-.tree-view {
-  // background-color: whitesmoke;
-}
-
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
   // color: white;
@@ -29,4 +24,26 @@ atom-text-editor {
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
   // border-color: red;
+}
+
+
+/**
+ * Make tree view more condensed.
+ * Via https://gist.github.com/pgmccann/10966497
+ */
+.tree-view {
+    // 11px by default.
+    font-size: 0.90909090909091em;
+}
+
+.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    line-height: 18px;
+}
+
+.list-group .selected:before, .list-tree .selected:before {
+    height: 18px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+    padding-left: 8px;
 }
