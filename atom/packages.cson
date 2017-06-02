@@ -1,7 +1,7 @@
 packages: [
-  "atom-beautify"
   "busy-signal"
   "color-picker"
+  "ex-mode"
   "intentions"
   "linter"
   "linter-pycodestyle"
@@ -16,6 +16,5 @@ packages: [
   "trailing-spaces"
   "tree-view-git-status"
   "vim-mode-plus"
-  "vim-mode-plus-ex-mode"
   "vim-mode-zz"
 ]
