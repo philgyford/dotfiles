@@ -2,8 +2,7 @@
   core:
     disabledPackages: [
       "background-tips"
-      "linter-pep8"
-      "linter-pylint"
+      "linter-pycodestyle"
     ]
     ignoredNames: [
       ".git"
@@ -14,6 +13,8 @@
       ".*.un~"
       "*.swp"
       "*.swo"
+      "*.pyc"
+      ".env.*"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/phil/Projects/personal"
@@ -30,6 +31,7 @@
     lineHeight: 1.2
     scrollPastEnd: true
     showIndentGuide: true
+    showInvisibles: true
     softWrap: true
     tabLength: 4
   "exception-reporting":
@@ -39,6 +41,7 @@
   "linter-pep8": {}
   "linter-sass-lint": {}
   "linter-tidy": {}
+  "linter-ui-default": {}
   "linter-xo":
     fixOnSave: true
   "package-sync":
@@ -54,6 +57,8 @@
   "tree-view":
     hideIgnoredNames: true
   "vim-mode": {}
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   welcome:
     showOnStartup: false
 ".basic.html.text":
