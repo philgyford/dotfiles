@@ -51,6 +51,10 @@
     '\\ t': 'tabs-to-spaces:tabify'
     '\\ s': 'tabs-to-spaces:untabify'
 
+    'd': 'vim-mode-plus-user:delete-with-backhole-register'
+
+# 'atom-text-editor.vim-mode-plus.delete-with-backhole-register-pending':
+#     'd': 'vim-mode-plus-user:delete-with-backhole-register' # to support `\ d d`.
 
 'atom-text-editor.vim-mode-plus.normal-mode':
     ';': 'vim-mode-plus-ex-mode:open'

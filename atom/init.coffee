@@ -17,3 +17,36 @@ atom.commands.add 'atom-text-editor',
   'settings:toggle-show-invisibles': (event) ->
     invisibles = atom.config.get('editor.showInvisibles')
     atom.config.set('editor.showInvisibles', !invisibles)
+
+
+######################################################################
+# Extending vim-mode-plus
+
+# General service consumer function
+# From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#overview
+consumeService = (packageName, providerName, fn) ->
+  if atom.packages.isPackageActive(packageName)
+    pack = atom.packages.getActivePackage(packageName)
+    fn(pack.mainModule[providerName]())
+  else
+    disposable = atom.packages.onDidActivatePackage (pack) ->
+      if pack.name is packageName
+        disposable.dispose()
+        fn(pack.mainModule[providerName]())
+
+
+# In vim-mode-plus, stop `d` putting the delete text on the clipboard.
+# Add this to keymap too:
+# 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+#   '\\ d': 'vim-mode-plus-user:delete-with-backhole-register'
+# From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister
+consumeService 'vim-mode-plus', 'provideVimModePlus', (service) ->
+  {Base} = service
+
+  Delete = Base.getClass('Delete')
+  class DeleteWithBackholeRegister extends Delete
+    @commandPrefix: 'vim-mode-plus-user'
+    @registerCommand()
+    execute: ->
+      @vimState.register.name = "_"
+      super
