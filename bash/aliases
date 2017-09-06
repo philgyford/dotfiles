@@ -1,8 +1,6 @@
 ########################################################################
 # ALIASES for servers, databases, etc
 
-alias webfaction="ssh -l philgyford web573.webfaction.com"
-
 alias spacebar="telnet spacebar.com 7227"
 alias baymoo="telnet baymoo.org 8888"
 
