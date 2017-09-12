@@ -8,13 +8,17 @@ alias baymoo="telnet baymoo.org 8888"
 ########################################################################
 # GENERAL ALIASES
 
-alias mysql="mysql --default-character-set=utf8"
+# Run a webserver from the current directory.
+# Access it at http://localhost:8000
+alias runserver="python -m http.server 8000"
+
+#alias mysql="mysql --default-character-set=utf8"
 
 alias mactop="top -ocpu -R -F -s 2 -n30"
 
-alias psql="/usr/local/bin/psql"
+#alias psql="/usr/local/bin/psql"
 
-alias php5='/usr/local/php5/bin/php'
+#alias php5='/usr/local/php5/bin/php'
 
 # What I had before:
 #alias l='ls -lh'
