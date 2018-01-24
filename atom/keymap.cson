@@ -28,7 +28,7 @@
 #############################################################################
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-    ', l': 'settings:toggle-show-invisibles'
+    ', l': 'window:toggle-invisibles'
 
     ', c space': 'editor:toggle-line-comments'
 
@@ -51,11 +51,14 @@
     '\\ t': 'tabs-to-spaces:tabify'
     '\\ s': 'tabs-to-spaces:untabify'
 
-#    'd': 'vim-mode-plus-user:delete-with-backhole-register'
+    # From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister
+    '\\ d': 'vim-mode-plus-user:delete-with-backhole-register'
 
-# 'atom-text-editor.vim-mode-plus.delete-with-backhole-register-pending':
-#     'd': 'vim-mode-plus-user:delete-with-backhole-register' # to support `\ d d`.
+# From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister
+'atom-text-editor.vim-mode-plus.delete-with-backhole-register-pending':
+  'd': 'vim-mode-plus-user:delete-with-backhole-register' # to support `\ d d`.
 
+ 
 'atom-text-editor.vim-mode-plus.normal-mode':
     ';': 'vim-mode-plus-ex-mode:open'
 
@@ -66,3 +69,7 @@
 
 '.platform-darwin':
     'cmd-t': 'application:new-file'
+
+# For Emmet: https://github.com/emmetio/emmet-atom
+'atom-text-editor[data-grammar="text html django"]:not([mini])':
+    'tab': 'emmet:expand-abbreviation-with-tab'
