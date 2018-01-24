@@ -1,5 +1,7 @@
 "*":
   core:
+    closeEmptyWindows: false
+    destroyEmptyPanes: false
     disabledPackages: [
       "background-tips"
       "linter-pycodestyle"
@@ -22,6 +24,10 @@
     themes: [
       "atom-light-ui"
       "solarized-light-syntax"
+    ]
+  "django-templates":
+    defaultToDjangoTemplatesForFilePathsContaining: [
+      "django"
     ]
   editor:
     fontFamily: "Fira Code"
@@ -66,6 +72,9 @@
 ".console.python.text":
   editor:
     preferredLineLength: 79
+".django.html.text":
+  editor:
+    tabLength: 2
 ".js.regexp.replacement.source":
   editor:
     preferredLineLength: 79
