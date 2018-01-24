@@ -1,7 +1,10 @@
 packages: [
   "busy-signal"
   "color-picker"
+  "django-templates"
+  "emmet"
   "ex-mode"
+  "file-icons"
   "intentions"
   "linter"
   "linter-pycodestyle"
@@ -16,5 +19,6 @@ packages: [
   "trailing-spaces"
   "tree-view-git-status"
   "vim-mode-plus"
+  "vim-mode-plus-keymaps-for-surround"
   "vim-mode-zz"
 ]
