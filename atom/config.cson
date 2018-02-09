@@ -69,9 +69,13 @@
 ".basic.html.text":
   editor:
     preferredLineLength: 79
+    tabLength: 2
 ".console.python.text":
   editor:
     preferredLineLength: 79
+".css.source":
+  editor:
+    tabLength: 2
 ".django.html.text":
   editor:
     tabLength: 2
@@ -94,6 +98,9 @@
 ".python.text.traceback":
   editor:
     preferredLineLength: 79
+".sass.source":
+  editor:
+    tabLength: 2
 ".source.yaml":
   editor:
     preferredLineLength: 79
