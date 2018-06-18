@@ -1,4 +1,6 @@
 packages: [
+  "atom-beautify"
+  "atom-wrap-in-tag"
   "busy-signal"
   "color-picker"
   "django-templates"
@@ -6,6 +8,7 @@ packages: [
   "ex-mode"
   "file-icons"
   "intentions"
+  "language-restructuredtext"
   "linter"
   "linter-pycodestyle"
   "linter-sass-lint"
@@ -13,6 +16,7 @@ packages: [
   "linter-ui-default"
   "linter-xo"
   "package-sync"
+  "php-twig"
   "pigments"
   "relative-numbers"
   "tabs-to-spaces"

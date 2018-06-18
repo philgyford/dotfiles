@@ -46,6 +46,9 @@
     'ctrl-h': 'window:focus-pane-on-left'
     'ctrl-l': 'window:focus-pane-on-right'
 
+    # Wrap the selected text in an HTML tag.
+    's t': 'wrap-in-tag:wrap'
+
     # Using tabs-to-spaces package:
     # No support for setting number of spaces per tab.
     '\\ t': 'tabs-to-spaces:tabify'
@@ -58,7 +61,7 @@
 'atom-text-editor.vim-mode-plus.delete-with-backhole-register-pending':
   'd': 'vim-mode-plus-user:delete-with-backhole-register' # to support `\ d d`.
 
- 
+
 'atom-text-editor.vim-mode-plus.normal-mode':
     ';': 'vim-mode-plus-ex-mode:open'
 

@@ -1,7 +1,9 @@
 "*":
+  "atom-beautify":
+    json:
+      indent_size: 2
   core:
-    closeEmptyWindows: false
-    destroyEmptyPanes: false
+    closeDeletedFileTabs: true
     disabledPackages: [
       "background-tips"
       "linter-pycodestyle"
@@ -17,6 +19,7 @@
       "*.swo"
       "*.pyc"
       ".env.*"
+      "__pycache__"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/phil/Projects/personal"
@@ -31,7 +34,7 @@
     ]
   editor:
     fontFamily: "Fira Code"
-    fontSize: 11
+    fontSize: 10
     invisibles:
       tab: "▸"
     lineHeight: 1.2
@@ -49,6 +52,8 @@
   "linter-ui-default": {}
   "linter-xo":
     fixOnSave: true
+  "markdown-preview":
+    useGitHubStyle: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true
@@ -89,6 +94,9 @@
   editor:
     preferredLineLength: 79
     tabLength: 2
+".json.source":
+  editor:
+    tabLength: 2
 ".python.regexp.source":
   editor:
     preferredLineLength: 79
@@ -104,4 +112,7 @@
 ".source.yaml":
   editor:
     preferredLineLength: 79
+    tabLength: 2
+".text.twig":
+  editor:
     tabLength: 2
