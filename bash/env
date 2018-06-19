@@ -1,4 +1,9 @@
 
+# Handy function.
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
 ## EDITOR
 
 #export EDITOR='subl -w'
@@ -32,10 +37,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ## RUBY
 
-eval "$(rbenv init -)"
+
+if command_exists rbenv ; then
+    eval "$(rbenv init -)"
+fi
 
 
 ## PYTHON
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command_exists pyenv ; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
