@@ -67,6 +67,10 @@
   "tree-view":
     hideIgnoredNames: true
   "vim-mode": {}
+  "vim-mode-plus":
+    blackholeRegisteredOperators: [
+      "delete*"
+    ]
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
   welcome:
