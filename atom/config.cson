@@ -68,9 +68,6 @@
     hideIgnoredNames: true
   "vim-mode": {}
   "vim-mode-plus":
-    blackholeRegisteredOperators: [
-      "delete*"
-    ]
     useClipboardAsDefaultRegister: false
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
