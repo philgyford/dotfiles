@@ -71,6 +71,7 @@
     blackholeRegisteredOperators: [
       "delete*"
     ]
+    useClipboardAsDefaultRegister: false
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
   welcome:

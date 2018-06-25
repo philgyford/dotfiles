@@ -1,21 +1,18 @@
+
 "use babel"
 
-const path = require("path")
+/* Extending vim-mode-plus */
 
+/* From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister */
+function consumeVimModePlusService(callback) {
+  const consume = (pack) => callback(pack.mainModule.provideVimModePlus())
 
-///////////////////////////////////////////////////////////////////////////
-// Extending vim-mode-plus
-
-// General service consumer function
-// From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#overview
-function consumeService(packageName, functionName, fn) {
-  const consume = pack => fn(pack.mainModule[functionName]())
-
-  if (atom.packages.isPackageActive(packageName)) {
-    consume(atom.packages.getActivePackage(packageName))
+  const pack = atom.packages.getActivePackage('vim-mode-plus')
+  if (pack) {
+    consume(pack)
   } else {
     const disposable = atom.packages.onDidActivatePackage(pack => {
-      if (pack.name === packageName) {
+      if (pack.name === 'vim-mode-plus') {
         disposable.dispose()
         consume(pack)
       }
@@ -23,22 +20,14 @@ function consumeService(packageName, functionName, fn) {
   }
 }
 
-consumeService("vim-mode-plus", "provideVimModePlus", service => {
-  return
-  const Base = service.Base
-
-  // In vim-mode-plus, stop `d` putting the delete text on the clipboard.
-  // Add this to keymap too:
-  // 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
-  //   '\\ d': 'vim-mode-plus-user:delete-with-backhole-register'
-  // From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister
-  // And from https://github.com/t9md/dotfiles/blob/a36f604f01f04fcb8ef98b0badfa9ba4397c1505/atom/init.js
-  class DeleteWithBackholeRegister extends Base.getClass("Delete") {
-    static commandPrefix = "vim-mode-plus-user"
+/* From https://github.com/t9md/atom-vim-mode-plus/wiki/ExtendVimModePlusInInitFile#advanced-deletewithbackholeregister */
+consumeVimModePlusService(service => {
+  class DeleteWithBackholeRegister extends service.getClass("Delete") {
     execute() {
       this.vimState.register.name = "_"
       super.execute()
     }
   }
+  DeleteWithBackholeRegister.commandPrefix = "vim-mode-plus-user"
   DeleteWithBackholeRegister.registerCommand()
 })
