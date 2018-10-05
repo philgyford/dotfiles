@@ -27,6 +27,9 @@ Thumbs.db
 # rbenv
 .ruby-version
 
+# sass
+.sass-cache
+
 # tox. Obvs.
 .tox
 .eggs
