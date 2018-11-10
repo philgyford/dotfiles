@@ -34,7 +34,7 @@
     ]
   editor:
     fontFamily: "Fira Code"
-    fontSize: 10
+    fontSize: 11
     invisibles:
       tab: "▸"
     lineHeight: 1.2
@@ -66,6 +66,7 @@
     ]
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
     useClipboardAsDefaultRegister: false
