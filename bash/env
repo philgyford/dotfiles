@@ -7,8 +7,8 @@ command_exists () {
 ## EDITOR
 
 #export EDITOR='subl -w'
-export EDITOR='mvim -w'
-#export EDITOR='atom -w'
+#export EDITOR='mvim -w'
+export EDITOR='atom -w'
 
 
 ## NODE
