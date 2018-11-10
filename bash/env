@@ -45,6 +45,10 @@ fi
 
 ## PYTHON
 
+# For pyenv:
+# https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib
+CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+
 if command_exists pyenv ; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
