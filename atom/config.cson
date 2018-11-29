@@ -87,6 +87,8 @@
 ".django.html.text":
   editor:
     tabLength: 2
+  whitespace:
+    ensureSingleTrailingNewline: false
 ".js.regexp.replacement.source":
   editor:
     preferredLineLength: 79
