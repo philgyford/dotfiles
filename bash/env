@@ -34,6 +34,9 @@ export PATH=/usr/local/pgsql/bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### For Django's makemessages translation command. Installed gettext with homebrew.
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
 
 ## RUBY
 
