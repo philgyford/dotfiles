@@ -34,12 +34,13 @@
     ]
   editor:
     fontFamily: "Fira Code"
-    fontSize: 11
+    fontSize: 10
     invisibles:
       tab: "▸"
     lineHeight: 1.2
     scrollPastEnd: true
     showIndentGuide: true
+    showInvisibles: true
     softWrap: true
     tabLength: 4
   "exception-reporting":
