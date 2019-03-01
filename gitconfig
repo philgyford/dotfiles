@@ -4,7 +4,8 @@
 [core]
 	#editor = subl -w
 	# editor = mvim --nofork
-	editor = atom --wait
+	# editor = atom --wait
+	editor = code --wait
 	excludesfile = /Users/phil/.gitignore_global
 [color]
 	ui = true
