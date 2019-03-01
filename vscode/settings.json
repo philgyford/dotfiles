@@ -1,0 +1,102 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/*~": true
+    },
+    "editor.accessibilitySupport": "off",
+    "editor.lineNumbers": "relative",
+    "editor.fontLigatures": true,
+    "workbench.tree.indent": 20,
+    "window.openFoldersInNewWindow": "on",
+    "search.exclude": {
+        "**/*.sqlite3": true,
+        "**/htmlcov": true
+    },
+    "python.autoComplete.addBrackets": true,
+    "python.venvPath": "~/.local/share/virtualenvs",
+    "vim.leader": ",",
+    "vim.textwidth": 79,
+    "editor.renderWhitespace": "none",
+    "vim.debug.loggingLevelForConsole": "debug",
+    "editor.rulers": [
+        80,
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Save and close file:
+        {
+            "before": ["Z", "Z"],
+            "commands": [":wq"]
+        },
+
+
+        // Turn off search highlighting:
+        // {
+        //     "before":["<C-n>"],
+        //     "commands": [":nohl"]
+        // },
+
+        // Not working:
+        // [
+        //     "before": [";w"],
+        //     "commands": ["workbench.action.closeActiveEditor"],
+        // }
+    ],
+
+    // Useful: https://github.com/doubleagent/vscode-settings/
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "d"],
+            "commands": ["workbench.action.toggleSidebarVisibility"],
+        },
+        {
+            "before": ["<leader>", "t"],
+            "commands": ["workbench.action.quickOpen"],
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": ["editor.action.toggleRenderWhitespace"],
+        },
+        // Comments
+        // not working for blocks, only single line:
+        {
+            "before": ["<leader>", "c", "<space>"],
+            "commands": ["editor.action.commentLine"],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+
+        // Splitting
+        {
+            "before": ["<leader>", "W"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": ["workbench.action.splitEditorRight"],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+    ],
+    "emmet.triggerExpansionOnTab": true,
+    "search.location": "panel",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": -1,
+    "workbench.editor.tabCloseButton": "left",
+    "[markdown]": {},
+    "files.associations": {
+        "*.md": "markdown"
+    }
+}
