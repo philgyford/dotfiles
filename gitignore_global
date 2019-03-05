@@ -33,3 +33,6 @@ Thumbs.db
 # tox. Obvs.
 .tox
 .eggs
+
+# Editors
+.vscode
