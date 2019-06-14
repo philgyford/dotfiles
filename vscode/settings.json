@@ -1,37 +1,96 @@
 {
-    "workbench.colorTheme": "Solarized Light",
-    "workbench.startupEditor": "newUntitledFile",
+    "editor.accessibilitySupport": "off",
+    // So that we can override indentation for specific filetypes:
+    "editor.detectIndentation": false,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        80,
+    ],
+    // Will be overriden for specific filetypes:
+    "editor.tabSize": 4,
+
+    "emmet.triggerExpansionOnTab": true,
+
+    // Stop the explorer from jumping to a file when focusing on it in the editor:
+    "explorer.autoReveal": false,
+
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
         "**/*~": true
     },
-    "editor.accessibilitySupport": "off",
-    "editor.lineNumbers": "relative",
-    "editor.fontLigatures": true,
-    "workbench.tree.indent": 20,
-    "window.openFoldersInNewWindow": "on",
+    "files.associations": {
+        // For Better Jinja extension:
+        "*.html": "jinja-html",
+        "*.md": "markdown"
+    },
+
+    "python.autoComplete.addBrackets": true,
+    "python.pythonPath": "/Users/phil/.local/share/virtualenvs/vscode-EVgoJy9n/bin/python",
+    "python.venvPath": "~/.local/share/virtualenvs",
+
+    // For Rewrap extension, for wrapping comments/docstrings:
+    "rewrap.wrappingColumn": 72,
+
     "search.exclude": {
         "**/*.sqlite3": true,
         "**/htmlcov": true
     },
-    "python.autoComplete.addBrackets": true,
-    "python.venvPath": "~/.local/share/virtualenvs",
+    "search.location": "panel",
+
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": -1,
+
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tree.indent": 20,
+
+    // Filetype specific settings:
+
+    "[css]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[javascript]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[jinja-html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[json]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[markdown]": {
+      "editor.tabSize": 4,
+    },
+    "[scss]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+
+    // vim specific settings:
+
     "vim.leader": ",",
     "vim.textwidth": 79,
-    "editor.renderWhitespace": "none",
     "vim.debug.loggingLevelForConsole": "debug",
-    "editor.rulers": [
-        80,
-    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         // Save and close file:
         {
             "before": ["Z", "Z"],
             "commands": [":wq"]
         },
-
 
         // Turn off search highlighting:
         // {
@@ -60,8 +119,7 @@
             "before": ["<leader>", "l"],
             "commands": ["editor.action.toggleRenderWhitespace"],
         },
-        // Comments
-        // not working for blocks, only single line:
+        // Comments toggle - single line
         {
             "before": ["<leader>", "c", "<space>"],
             "commands": ["editor.action.commentLine"],
@@ -80,6 +138,15 @@
         },
     ],
 
+    "vim.visualModeKeyBindings": [
+        // Comments toggle - multiple lines
+        {
+          "before": ["<leader>", "c", "<space>"],
+          "commands": ["editor.action.commentLine"],
+          "when": "editorTextFocus && !editorReadonly"
+        }
+    ],
+
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [">"],
@@ -90,13 +157,6 @@
             "commands": ["editor.action.outdentLines"]
         },
     ],
-    "emmet.triggerExpansionOnTab": true,
-    "search.location": "panel",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": -1,
-    "workbench.editor.tabCloseButton": "left",
-    "[markdown]": {},
-    "files.associations": {
-        "*.md": "markdown"
-    }
+    "editor.wordWrap": "on"
+
 }
