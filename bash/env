@@ -8,7 +8,8 @@ command_exists () {
 
 #export EDITOR='subl -w'
 #export EDITOR='mvim -w'
-export EDITOR='atom -w'
+#export EDITOR='atom -w'
+export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 
 
 ## NODE
@@ -16,13 +17,11 @@ export EDITOR='atom -w'
 # For node.js (installed with homebrew).
 export NODE_PATH='/usr/local/lib/node_modules'
 
-[[ -s /Users/phil/.nvm/nvm.sh ]] && . /Users/phil/.nvm/nvm.sh # This loads NVM
+# Inserted by NVM into .bashrc:
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export NVM_DIR="/Users/phil/.nvm"
-if [ -f NVM_DIR ]
-then
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
 
 ## PATH
 
@@ -34,12 +33,14 @@ export PATH=/usr/local/pgsql/bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# So we can use mvim
+export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
+
 ### For Django's makemessages translation command. Installed gettext with homebrew.
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 
 ## RUBY
-
 
 if command_exists rbenv ; then
     eval "$(rbenv init -)"
@@ -52,7 +53,19 @@ fi
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib
 CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
+#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+
 if command_exists pyenv ; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+
+## OTHER
+
+# added by travis gem
+[ -f /Users/phil/.travis/travis.sh ] && source /Users/phil/.travis/travis.sh
+
+# Inserted into .bashrc by FZF:
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
