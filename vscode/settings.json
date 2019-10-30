@@ -157,6 +157,7 @@
             "commands": ["editor.action.outdentLines"]
         },
     ],
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "python.formatting.provider": "black"
 
 }
