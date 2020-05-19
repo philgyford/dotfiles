@@ -39,6 +39,8 @@ export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
 ### For Django's makemessages translation command. Installed gettext with homebrew.
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
+# So that Visual Studio Code can use black etc:
+export PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH"
 
 ## RUBY
 
