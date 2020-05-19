@@ -18,16 +18,15 @@ alias mactop="top -ocpu -R -F -s 2 -n30"
 # https://github.com/revans/bash-it/blob/master/aliases/available/general.aliases.bash
 
 # List directory contents
-alias sl=ls
 alias ls='ls -G'        # Compact view, show colors
 alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
-alias l1='ls -1'
+#alias l1='ls -1'
 
-alias c='clear'
-alias k='clear'
-alias cls='clear'
+#alias c='clear'
+#alias k='clear'
+#alias cls='clear'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
@@ -46,11 +45,6 @@ alias m='./manage.py'
 
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
-
-
-# pyenv
-alias pya='pyenv activate'
-alias pyd='pyenv deactivate'
 
 
 ########################################################################
