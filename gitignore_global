@@ -35,4 +35,4 @@ Thumbs.db
 .eggs
 
 # Editors
-.vscode
+#.vscode
