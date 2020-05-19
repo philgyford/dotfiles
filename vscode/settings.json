@@ -2,16 +2,24 @@
     "editor.accessibilitySupport": "off",
     // So that we can override indentation for specific filetypes:
     "editor.detectIndentation": false,
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCodeNerdFontComplete-Retina, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.rulers": [
-        80,
+        80
     ],
+    // "editor.codeActionsOnSave": null,
+
     // Will be overriden for specific filetypes:
     "editor.tabSize": 4,
+
+    "editor.wordWrap": "on",
+
+    // DON'T set this, because then I don't know how to get black to work for
+    // python. Instead set this per-language below.
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     "emmet.triggerExpansionOnTab": true,
 
@@ -20,6 +28,7 @@
 
     "files.exclude": {
         "**/__pycache__": true,
+        "**/.pytest_cache": true,
         "**/*.pyc": true,
         "**/*~": true
     },
@@ -29,9 +38,23 @@
         "*.md": "markdown"
     },
 
+    "files.trimFinalNewlines": true,
+
+    // Because VS Code started complaining it wasn't installed.
+    // This is the result of `which git`:
+    "git.path": "/usr/local/bin/git",
+
     "python.autoComplete.addBrackets": true,
-    "python.pythonPath": "/Users/phil/.local/share/virtualenvs/vscode-EVgoJy9n/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=88",
+        "--ignore=E203,W503"
+    ],
+    "python.pythonPath": "/Users/phil/.local/share/virtualenvs/vscode-T2pk6zJs/bin/python",
     "python.venvPath": "~/.local/share/virtualenvs",
+    "python.formatting.provider": "black",
 
     // For Rewrap extension, for wrapping comments/docstrings:
     "rewrap.wrappingColumn": 72,
@@ -40,29 +63,36 @@
         "**/*.sqlite3": true,
         "**/htmlcov": true
     },
-    "search.location": "panel",
+
+    // Trailing Spaces extension
+    "trailing-spaces.highlightCurrentLine": false,
+    "trailing-spaces.backgroundColor": "rgba(220,50,47,0.3)",
+    "trailing-spaces.borderColor": "rgba(220,50,47,0.15)",
 
     "window.openFoldersInNewWindow": "on",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
 
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Solarized Light+",
     "workbench.editor.tabCloseButton": "left",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.tree.indent": 20,
+    "workbench.tree.indent": 15,
 
     // Filetype specific settings:
 
     "[css]": {
         "editor.tabSize": 2,
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[html]": {
         "editor.tabSize": 2,
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascript]": {
       "editor.tabSize": 2,
-      "editor.insertSpaces": true
+      "editor.insertSpaces": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[jinja-html]": {
         "editor.tabSize": 2,
@@ -70,14 +100,22 @@
     },
     "[json]": {
       "editor.tabSize": 2,
-      "editor.insertSpaces": true
+      "editor.insertSpaces": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[markdown]": {
       "editor.tabSize": 4,
     },
+    "[python]": {
+        "editor.rulers": [72, 88],
+        // When using the black formatter, VS Code issues the following warning when pasting source code into the editor: Black does not support the "Format Select" command. To prevent this warning, add the following entry to your user or workspace settings to disable format on paste for Python files:
+        "editor.formatOnPaste": false,
+        // "editor.defaultFormatter": "black"
+    },
     "[scss]": {
         "editor.tabSize": 2,
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
 
     // vim specific settings:
@@ -136,6 +174,23 @@
             "commands": ["workbench.action.splitEditorRight"],
             "when": "editorTextFocus && !editorReadonly"
         },
+
+        // Jump to next/previous problem
+        {
+            "before": ["<leader>", "a", "j"],
+            "commands": ["editor.action.marker.next"],
+        },
+        {
+            "before": ["<leader>", "a", "k"],
+            "commands": ["editor.action.marker.prev"],
+        },
+
+        // Format document (same as shift-option-F)
+        {
+            "before": ["<leader>", "f", "o"],
+            "commands": ["editor.action.formatDocument"],
+            "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+        }
     ],
 
     "vim.visualModeKeyBindings": [
@@ -144,7 +199,8 @@
           "before": ["<leader>", "c", "<space>"],
           "commands": ["editor.action.commentLine"],
           "when": "editorTextFocus && !editorReadonly"
-        }
+        },
+
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -157,7 +213,12 @@
             "commands": ["editor.action.outdentLines"]
         },
     ],
-    "editor.wordWrap": "on",
-    "python.formatting.provider": "black"
+    "workbench.activityBar.visible": false,
+    "editor.lineHeight": 15,
+    "editor.fontSize": 13,
+    "workbench.colorCustomizations": {
+        // https://dev.to/sfarias051/how-to-change-the-terminal-style-in-vscode-in-an-easy-way-5139
+        "terminal.background": "#073642"
+    },
 
 }
