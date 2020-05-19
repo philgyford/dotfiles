@@ -12,17 +12,7 @@ alias baymoo="telnet baymoo.org 8888"
 # Access it at http://localhost:8000
 alias runserver="python -m http.server 8000"
 
-#alias mysql="mysql --default-character-set=utf8"
-
 alias mactop="top -ocpu -R -F -s 2 -n30"
-
-#alias psql="/usr/local/bin/psql"
-
-#alias php5='/usr/local/php5/bin/php'
-
-# What I had before:
-#alias l='ls -lh'
-#alias ll='ls -lah'
 
 # ALL THE BELOW from
 # https://github.com/revans/bash-it/blob/master/aliases/available/general.aliases.bash
@@ -88,35 +78,34 @@ alias gcl='git clone'
 alias ga='git add'
 alias gall='git add --all .'
 alias g='git'
-alias get='git'
 alias gs='git status'
 alias gss='git status -s'
 # Lists all files that can be added, not just top-level directories/files like
 # git status:
-alias gsall='git ls-files -o --exclude-standard'
+#alias gsall='git ls-files -o --exclude-standard'
 alias gl='git pull'
 alias glo='git pull origin'
-alias gup='git fetch && git rebase'
+#alias gup='git fetch && git rebase'
 alias gp='git push'
 alias gpo='git push origin'
-alias gdv='git diff -w "$@" | vim -R -'
-alias gdn='git diff --name-status' # Just list name and status of changed files.
+#alias gdv='git diff -w "$@" | vim -R -'
+#alias gdn='git diff --name-status' # Just list name and status of changed files.
 alias gc='git commit'
 alias gca='git commit -a'
 # alias gc='git commit -v'
 # alias gca='git commit -v -a'
 alias gci='git commit --interactive'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gcount='git shortlog -sn'
-alias gcp='git cherry-pick'
-alias gco='git checkout'
-alias gexport='git archive --format zip --output'
-alias gdel='git branch -D'
-alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
-alias gll='git log --oneline --decorate --graph'
-alias gr='git remote -v'
-alias gg='git grep --ignore-case --line-number --untracked --exclude-standard'
+#alias gb='git branch'
+#alias gba='git branch -a'
+#alias gcount='git shortlog -sn'
+#alias gcp='git cherry-pick'
+#alias gco='git checkout'
+#alias gexport='git archive --format zip --output'
+#alias gdel='git branch -D'
+#alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+#alias gll='git log --oneline --decorate --graph'
+#alias gr='git remote -v'
+#alias gg='git grep --ignore-case --line-number --untracked --exclude-standard'
 
 case $OSTYPE in
   linux*)
