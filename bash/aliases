@@ -31,7 +31,6 @@ alias l='ls -a'
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up three directories
-alias -- -="cd -"        # Go back
 
 # Directory
 alias	md='mkdir -p'
@@ -45,6 +44,13 @@ alias m='./manage.py'
 
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
+
+# For moving to often-used directories
+
+alias pepys='cd ~/Projects/personal/django-pepysdiary'
+alias hines='cd ~/Projects/personal/django-hines'
+alias ditto='cd ~/Projects/personal/django-ditto'
+alias spectator='cd ~/Projects/personal/django-spectator'
 
 
 ########################################################################
