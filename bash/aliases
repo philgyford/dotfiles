@@ -45,6 +45,9 @@ alias m='./manage.py'
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
 
+# Rename git master branch to main:
+alias rename_master_to_main='git branch -m master main && git push origin main && echo “Change ‘Default Branch’ in Settings/Branches in GitHub and press Enter” && read && git push origin :master'
+
 # For moving to often-used directories
 
 alias pepys='cd ~/Projects/personal/django-pepysdiary'
@@ -95,16 +98,16 @@ alias gca='git commit -a'
 # alias gc='git commit -v'
 # alias gca='git commit -v -a'
 alias gci='git commit --interactive'
-#alias gb='git branch'
+alias gb='git branch'
 #alias gba='git branch -a'
 #alias gcount='git shortlog -sn'
 #alias gcp='git cherry-pick'
-#alias gco='git checkout'
+alias gco='git checkout'
 #alias gexport='git archive --format zip --output'
 #alias gdel='git branch -D'
 #alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
-#alias gll='git log --oneline --decorate --graph'
-#alias gr='git remote -v'
+alias gll='git log --oneline --decorate --graph'
+alias gr='git remote -v'
 #alias gg='git grep --ignore-case --line-number --untracked --exclude-standard'
 
 case $OSTYPE in
