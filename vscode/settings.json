@@ -190,7 +190,14 @@
             "before": ["<leader>", "f", "o"],
             "commands": ["editor.action.formatDocument"],
             "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-        }
+        },
+
+        // Open big search panel
+        {
+            "before": ["<leader>", "f", "f"],
+            "commands": ["workbench.action.findInFiles"],
+            "when": "editorTextFocus"
+          },
     ],
 
     "vim.visualModeKeyBindings": [
