@@ -1,0 +1,61 @@
+
+###############################################################################
+# Misc settings
+
+# Set case-insensitive globbing
+setopt NO_CASE_GLOB
+
+# Automatically change directory without `cd`, and enable `..` etc.
+setopt AUTO_CD
+
+# Enable correction
+setopt CORRECT
+setopt CORRECT_ALL
+
+
+###############################################################################
+# History settings
+
+# Expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Do not store duplications
+setopt HIST_IGNORE_DUPS
+
+# Ignore duplicates when searching
+setopt HIST_FIND_NO_DUPS
+
+# Removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+
+# Share history across multiple zsh sessions
+setopt SHARE_HISTORY
+
+# Append to history
+setopt APPEND_HISTORY
+
+# Adds commands as they are typed, not at shell exit
+setopt INC_APPEND_HISTORY
+
+# Save history when exiting a shell
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+
+# How many lines to save in memory:
+HISTSIZE=999999999
+
+# How many lines to save in history file:
+SAVEHIST=$HISTSIZE
+
+
+###############################################################################
+
+# Start typing a command and then do up/down arrow, and your initial
+# characters will be used to filter the matches from history.
+# Assumes the zsh-history-substring-search script has already been included:
+
+bindkey '^[[A' history-substring-search-up     # up arrow
+bindkey '^[[B' history-substring-search-down   # down arrow
+
+# Override the default colors set in zsh-history-substring-search
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=white'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=160'

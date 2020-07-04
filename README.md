@@ -3,6 +3,9 @@ dotfiles
 
 My system config stuff.
 
+Recently (2020) switched from using bash to zsh, so the bash files probably won't
+get many updates from here on.
+
 For each of the files/folders do something like:
 
     $ ln -s ~/Projects/personal/dotfiles/filename ~/.filename

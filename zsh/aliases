@@ -1,0 +1,193 @@
+
+
+########################################################################
+# Call this to get a list of timings for starting the shell
+# Does it ten times to account for variability:
+# From https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+
+########################################################################
+# NVM lazy loading
+# placeholder nvm shell function
+# On first use, it will set nvm up properly which will replace the `nvm`
+# shell function with the real one
+# Based on https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
+# nvm() {
+#   if [[ -d "$HOME/.nvm" ]]; then
+#     NVM_DIR="$HOME/.nvm"
+#     export NVM_DIR
+
+#     # From the original script:
+#     # shellcheck disable=SC1090
+#     # source "${NVM_DIR}/nvm.sh"
+#     # if [[ -e ~/.nvm/alias/default ]]; then
+#     #   PATH="${PATH}:${HOME}.nvm/versions/node/$(cat ~/.nvm/alias/default)/bin"
+#     # fi
+#     # # invoke the real nvm function now
+#     # nvm "$@"
+
+#     # From what NVM adds to .zshrc when it's installed:
+#     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#     [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#     # # invoke the real nvm function now
+#     nvm "$@"
+#   else
+#     echo "nvm is not installed" >&2
+#     return 1
+#   fi
+# }
+
+# This is what NVM installs by default into .zshrc:
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+########################################################################
+# ALIASES for servers, databases, etc
+
+alias spacebar="telnet spacebar.com 7227"
+alias baymoo="telnet baymoo.org 8888"
+
+
+########################################################################
+# GENERAL ALIASES
+
+# Run a webserver from the current directory.
+# Access it at http://localhost:8000
+alias runserver="python -m http.server 8000"
+
+alias mactop="top -ocpu -R -F -s 2 -n30"
+
+# ALL THE BELOW from
+# https://github.com/revans/bash-it/blob/master/aliases/available/general.aliases.bash
+
+# List directory contents
+alias ls='ls -G'        # Compact view, show colors
+alias la='ls -AF'       # Compact view, show hidden
+alias ll='ls -al'
+alias l='ls -a'
+# alias l1='ls -1'
+
+#alias c='clear'
+#alias k='clear'
+#alias cls='clear'
+
+# alias ..='cd ..'         # Go up one directory (Handled by AUTO_CD setting)
+alias ...='cd ../..'     # Go up two directories
+alias ....='cd ../../..' # Go up three directories
+
+# Directory
+alias	md='mkdir -p'
+alias	rd=rmdir
+
+alias d='docker-compose'
+
+alias h='heroku'
+
+alias m='./manage.py'
+
+# List all open network connections:
+alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
+
+# Rename git master branch to main:
+alias rename_master_to_main='git branch -m master main && git push origin main && echo “Change ‘Default Branch’ in Settings/Branches in GitHub and press Enter” && read && git push origin :master'
+
+# For moving to often-used directories
+
+alias pepys='cd ~/Projects/personal/django-pepysdiary'
+alias hines='cd ~/Projects/personal/django-hines'
+alias ditto='cd ~/Projects/personal/django-ditto'
+alias spectator='cd ~/Projects/personal/django-spectator'
+
+
+########################################################################
+# If Highlight syntax-highlighting is installed.
+# http://www.andre-simon.de/doku/highlight/en/highlight.php
+#
+# Takes content from clipboard, turns it into syntax-highlighted RTF
+# and puts that back on the clipboard, highlighted as the supplied syntax.
+#
+# eg:
+#   hilite html
+#   hilite js
+
+hilite() {
+    pbpaste | highlight --style=solarized-light --tab=2 --font='Monaco' --font-size=36 -O rtf --syntax=$1 | pbcopy
+}
+alias hilite=hilite
+
+
+########################################################################
+# GIT ALIASES originally from
+# https://github.com/revans/bash-it/blob/master/aliases/available/git.aliases.bash
+
+alias gcl='git clone'
+alias ga='git add'
+alias gall='git add --all .'
+alias g='git'
+alias gs='git status'
+alias gss='git status -s'
+# Lists all files that can be added, not just top-level directories/files like
+# git status:
+#alias gsall='git ls-files -o --exclude-standard'
+alias gl='git pull'
+alias glo='git pull origin'
+#alias gup='git fetch && git rebase'
+alias gp='git push'
+alias gpo='git push origin'
+#alias gdv='git diff -w "$@" | vim -R -'
+#alias gdn='git diff --name-status' # Just list name and status of changed files.
+alias gc='git commit'
+alias gca='git commit -a'
+# alias gc='git commit -v'
+# alias gca='git commit -v -a'
+alias gci='git commit --interactive'
+alias gb='git branch'
+#alias gba='git branch -a'
+#alias gcount='git shortlog -sn'
+#alias gcp='git cherry-pick'
+alias gco='git checkout'
+#alias gexport='git archive --format zip --output'
+#alias gdel='git branch -D'
+#alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gll='git log --oneline --decorate --graph'
+alias gr='git remote -v'
+#alias gg='git grep --ignore-case --line-number --untracked --exclude-standard'
+
+case $OSTYPE in
+  linux*)
+    alias gd='git diff | vim -R -'
+    ;;
+  darwin*)
+    alias gd='git diff | mvim'
+    ;;
+  darwin*)
+    alias gd='git diff'
+    ;;
+esac
+
+
+alias be='bundle exec'
+
+########################################################################
+# Run `bundle exec` before certain Ruby commands, if there's a Gemfile.
+# http://marc-bowes.com/2011/09/21/dry-your-bundle-exec-tears.html
+#bundle_commands="rake ruby spec rspec cucumber cap watchr rails rackup"
+#function run_bundler_cmd () {
+    #if [ -r ./Gemfile ]; then
+        #bundle exec $@
+    #else
+        #$@
+    #fi
+#}
+#for cmd in $bundle_commands
+#do
+    #alias $cmd="run_bundler_cmd $cmd"
+#done
