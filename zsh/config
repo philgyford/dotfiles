@@ -47,6 +47,10 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
 
+# Case-insensitive completion, except for uppercase letters:
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+
+
 ###############################################################################
 
 # Start typing a command and then do up/down arrow, and your initial
