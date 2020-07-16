@@ -109,24 +109,24 @@ fi;
 
 ###############################################################################
 
-P='${red}%n '                                       # username
-P+='${white}at '
-P+='${orange}%m '                                   # host
-P+='${white}in '
-P+='${yellow}%~ '                                   # working directory
+P='%{${red}%}%n '                                       # username
+P+='%{${white}%}at '
+P+='%{${orange}%}%m '                                   # host
+P+='%{${white}%}in '
+P+='%{${yellow}%}%~ '                                   # working directory
 
-P+='$(prompt_python "${white}p ${green}")';		    # Python version
+P+='$(prompt_python "%{${white}%}p %{${green}%}")';		    # Python version
 
-P+='$(prompt_virtualenv "${white} env ${green}")';	# Python virtualenv
+P+='$(prompt_virtualenv "%{${white}%} env %{${green}%}")';	# Python virtualenv
 
-P+='$(prompt_rbenv "${white} r ${cyan}")';			# Ruby version
+P+='$(prompt_rbenv "%{${white}%} r %{${cyan}%}")';			# Ruby version
 
-P+='$(prompt_nvm "${white} n ${blue}")';			# NVM node version
+P+='$(prompt_nvm "%{${white}%} n %{${blue}%}")';			# NVM node version
 
 P+='$(__git_ps1 " ${white}on ${violet}%s")'         # git
 
 P+=$'\n'
-P+='${white}$'
+P+='%{${white}%}$'
 P+='%f '                                            # reset color
 
 PROMPT=$P
