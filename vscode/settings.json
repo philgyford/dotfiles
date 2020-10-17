@@ -227,5 +227,12 @@
         // https://dev.to/sfarias051/how-to-change-the-terminal-style-in-vscode-in-an-easy-way-5139
         "terminal.background": "#073642"
     },
+    "[git-commit]": {
+        "editor.quickSuggestions": false,
+        "editor.rulers": [
+            72
+        ]
+    },
+    "terminal.integrated.fontSize": 15,
 
 }
