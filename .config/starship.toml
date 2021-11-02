@@ -2,26 +2,23 @@
 
 add_newline = true
 
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "python",
-    "ruby",
-    "nodejs",
-    "git_branch",
-    "git_status",
-    "line_break",
-    "character",
-]
+format = """\
+    $username\
+    $hostname\
+    $directory\
+    $python\
+    $ruby\
+    $nodejs\
+    $git_branch\
+    $git_status\
+    $line_break\
+    $character\
+    """
 
 [character]
 # Replace the "❯" symbol in the prompt
-symbol = "$"
-error_symbol = "✖"
-user_symbol_for_status = true
-style_success = "254"  # white
-style_failure = "160"  # red
+success_symbol = "[➜](bold green) "
+error_symbol = "[✖](bold red)"
 
 [directory]
 style = "136"  # yellow
@@ -30,8 +27,7 @@ truncation_length = 3
 
 [git_branch]
 style = "61"  # violet
-# symbol = " "
-symbol = ""
+symbol = " "
 
 [git_status]
 style = "61"  # violet
@@ -43,12 +39,15 @@ trim_at	= "."
 
 [nodejs]
 style = "33"  # blue
+symbol = "⬢ "
 
 [python]
 style = "64"  # green
+symbol = " "
 
 [ruby]
 style = "37"  # cyan
+symbol = " "
 
 [username]
 show_always = true
