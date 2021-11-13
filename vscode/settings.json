@@ -1,27 +1,15 @@
 {
-    "editor.accessibilitySupport": "off",
-    // So that we can override indentation for specific filetypes:
-    "editor.detectIndentation": false,
+"editor.accessibilitySupport": "off",
     "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCodeNerdFontComplete-Retina, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.rulers": [
         80
     ],
-    // "editor.codeActionsOnSave": null,
-
-    // Will be overriden for specific filetypes:
-    "editor.tabSize": 4,
 
     "editor.wordWrap": "on",
-
-    // DON'T set this, because then I don't know how to get black to work for
-    // python. Instead set this per-language below.
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    "emmet.triggerExpansionOnTab": true,
 
     // Stop the explorer from jumping to a file when focusing on it in the editor:
     "explorer.autoReveal": false,
@@ -220,7 +208,6 @@
             "commands": ["editor.action.outdentLines"]
         },
     ],
-    "workbench.activityBar.visible": false,
     "editor.lineHeight": 15,
     "editor.fontSize": 13,
     "workbench.colorCustomizations": {
@@ -234,5 +221,31 @@
         ]
     },
     "terminal.integrated.fontSize": 15,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "extensions.ignoreRecommendations": false,
+    "editor.suggest.showStatusBar": true,
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.editor.wrapTabs": true,
+    "python.analysis.completeFunctionParens": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.showStartPage": false,
+"workbench.activityBar.visible": false,
+"editor.cursorStyle": "line",
+"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+"html.format.indentHandlebars": true,
+"html.format.indentInnerHtml": true,
+"editor.stickyTabStops": true,
+"editor.insertSpaces": false,
+"python.defaultInterpreterPath": "/Users/phil/.local/share/virtualenvs/vscode-T2pk6zJs/bin/python",
+"notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+},
+"security.workspace.trust.untrustedFiles": "open",
+"editor.guides.bracketPairs": "active",
 
 }
