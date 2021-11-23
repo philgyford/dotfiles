@@ -4,7 +4,7 @@
   "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.rulers": [80],
 
   "editor.wordWrap": "on",
@@ -92,8 +92,10 @@
   "[python]": {
     "editor.rulers": [72, 88],
     // When using the black formatter, VS Code issues the following warning when pasting source code into the editor: Black does not support the "Format Select" command. To prevent this warning, add the following entry to your user or workspace settings to disable format on paste for Python files:
-    "editor.formatOnPaste": false
+    "editor.formatOnPaste": false,
     // "editor.defaultFormatter": "black"
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
   },
   "[scss]": {
     "editor.tabSize": 2,
