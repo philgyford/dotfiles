@@ -14,6 +14,9 @@ alias runserver="python -m http.server 8000"
 
 alias mactop="top -ocpu -R -F -s 2 -n30"
 
+# For a script I often use in local development websites:
+alias run="./run"
+
 # ALL THE BELOW from
 # https://github.com/revans/bash-it/blob/master/aliases/available/general.aliases.bash
 

@@ -63,6 +63,9 @@ alias baymoo="telnet baymoo.org 8888"
 # Access it at http://localhost:8000
 alias runserver="python -m http.server 8000"
 
+# For a script I often use in local development websites:
+alias run="./run"
+
 alias mactop="top -ocpu -R -F -s 2 -n30"
 
 # ALL THE BELOW from
