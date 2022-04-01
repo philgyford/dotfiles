@@ -9,11 +9,11 @@ fi
 
 
 # Added after installing mysql with homebrew:
-export PATH=$PATH:/usr/local/mysql/bin
+# export PATH=$PATH:/usr/local/mysql/bin
 
 
 # added by travis gem
-[ -f /Users/phil/.travis/travis.sh ] && source /Users/phil/.travis/travis.sh
+# [ -f /Users/phil/.travis/travis.sh ] && source /Users/phil/.travis/travis.sh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

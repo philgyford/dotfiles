@@ -42,3 +42,5 @@ function goenv {
 }
 
 # END functions needed for Hactar project
+# Created by `pipx` on 2022-04-01 09:24:36
+export PATH="$PATH:/Users/phil/.local/bin"

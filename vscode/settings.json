@@ -55,7 +55,7 @@
   "window.openFoldersInNewWindow": "on",
   "window.zoomLevel": -2,
 
-  "workbench.colorTheme": "Solarized Light+",
+  "workbench.colorTheme": "Better Solarized Light",
   "workbench.editor.tabCloseButton": "left",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.indent": 15,
