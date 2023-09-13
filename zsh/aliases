@@ -96,18 +96,36 @@ alias h='heroku'
 
 alias m='./manage.py'
 
+alias c='code .'
+
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
 
 # Rename git master branch to main:
 alias rename_master_to_main='git branch -m master main && git push origin main && echo “Change ‘Default Branch’ in Settings/Branches in GitHub and press Enter” && read && git push origin :master'
 
+
+########################################################################
+# virtualenv and pip-tools
+
+# Activate current virtualenv:
+alias activate='source venv/bin/activate'
+
+# Generate requirements.txt from requirements.in:
+alias pipc='pip-compile --upgrade --quiet --generate-hashes'
+
+alias ppip='python -m pip'
+alias ppipinstall='python -m pip install -r requirements.txt'
+
+
+########################################################################
 # For moving to often-used directories
 
 alias pepys='cd ~/Projects/personal/django-pepysdiary'
 alias hines='cd ~/Projects/personal/django-hines'
 alias ditto='cd ~/Projects/personal/django-ditto'
 alias spectator='cd ~/Projects/personal/django-spectator'
+alias oohdir='cd ~/Projects/personal/ooh-directory/oohdir'
 
 
 ########################################################################
