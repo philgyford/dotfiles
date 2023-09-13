@@ -8,9 +8,9 @@ setopt NO_CASE_GLOB
 # Automatically change directory without `cd`, and enable `..` etc.
 setopt AUTO_CD
 
-# Enable correction
+# Enable correction for commands but not their arguments
+unsetopt CORRECT_ALL
 setopt CORRECT
-setopt CORRECT_ALL
 
 
 ###############################################################################

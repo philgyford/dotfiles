@@ -12,3 +12,4 @@
 [ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
 
 eval "$(starship init bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
