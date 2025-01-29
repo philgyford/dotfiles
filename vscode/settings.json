@@ -1,9 +1,8 @@
 {
   "editor.accessibilitySupport": "off",
-  "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [80],
 
   "editor.wordWrap": "on",
@@ -18,9 +17,9 @@
     "**/*~": true
   },
   "files.associations": {
-    // For Better Jinja extension:
     "*.html": "jinja-html",
-    "*.md": "markdown"
+    "*.md": "markdown",
+    "*.php": "php"
   },
 
   "files.trimFinalNewlines": true,
@@ -29,14 +28,17 @@
   // This is the result of `which git`:
   "git.path": "/usr/local/bin/git",
 
-  "python.autoComplete.addBrackets": true,
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--max-line-length=88", "--ignore=E203,W503"],
-  "python.pythonPath": "/Users/phil/.local/share/virtualenvs/vscode-T2pk6zJs/bin/python",
-  "python.venvPath": "~/.local/share/virtualenvs",
-  "python.formatting.provider": "black",
+  // Deprecated?
+  // "python.autoComplete.addBrackets": true,
+  // "python.linting.enabled": true,
+  // "python.linting.pylintEnabled": false,
+  // "python.linting.flake8Enabled": true,
+  // "python.linting.flake8Args": ["--max-line-length=88", "--ignore=E203,W503"],
+  // "python.pythonPath": "/Users/phil/.local/share/virtualenvs/vscode-T2pk6zJs/bin/python",
+  // "python.formatting.provider": "black",
+
+  // Not needed now using uv?
+  // "python.venvPath": "~/.local/share/virtualenvs",
 
   // For Rewrap extension, for wrapping comments/docstrings:
   "rewrap.wrappingColumn": 72,
@@ -47,9 +49,10 @@
   },
 
   // Trailing Spaces extension
+  // https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
   "trailing-spaces.highlightCurrentLine": false,
-  "trailing-spaces.backgroundColor": "rgba(220,50,47,0.3)",
-  "trailing-spaces.borderColor": "rgba(220,50,47,0.15)",
+  "trailing-spaces.backgroundColor": "rgba(220,50,47,0.4)",
+  "trailing-spaces.borderColor": "rgba(220,50,47,0.4)",
 
   "window.openFoldersInNewWindow": "on",
   "workbench.editor.tabCloseButton": "left",
@@ -202,11 +205,7 @@
       "commands": ["editor.action.outdentLines"]
     }
   ],
-  "editor.lineHeight": 16,
-  "workbench.colorCustomizations": {
-    // https://dev.to/sfarias051/how-to-change-the-terminal-style-in-vscode-in-an-easy-way-5139
-    "terminal.background": "#073642"
-  },
+  "editor.lineHeight": 18,
   "[git-commit]": {
     "editor.quickSuggestions": {
       "comments": "off",
@@ -221,14 +220,12 @@
   },
   "extensions.ignoreRecommendations": true,
   "editor.suggest.showStatusBar": true,
-  "emmet.triggerExpansionOnTab": true,
   "workbench.editor.wrapTabs": true,
   "python.analysis.completeFunctionParens": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
   "python.showStartPage": false,
-  "workbench.activityBar.visible": false,
   "editor.cursorStyle": "line",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "html.format.indentHandlebars": true,
@@ -243,8 +240,40 @@
   "security.workspace.trust.untrustedFiles": "open",
   "editor.guides.bracketPairs": "active",
   "vim.smartRelativeLine": true,
-  "workbench.colorTheme": "Solarized Light+",
   "window.commandCenter": true,
-  "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, 'Courier New', monospace",
-  "editor.occurrencesHighlight": false
+  "editor.fontFamily": "'Monaspace Neon', monospace",
+  // For Monapsace:
+  // calt: Contextual alternates
+  // liga: Ligatures
+  // dlig: Discretionary ligatures (required to enable the below)
+  // ss01: ligatures related to the equals glyph like != and ===.
+  // ss02: ligatures related to the greater than or less than operators.
+  // ss03: ligatures related to arrows like -> and =>.
+  // ss04: ligatures related to markup, like </ and />.
+  // ss05: ligatures related to the F# programming language, like |>.
+  // ss06: ligatures related to repeated uses of # such as ## or ###.
+  // ss07: ligatures related to the asterisk like ***.
+  // ss08: ligatures related to combinations like .= or .-.
+  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.occurrencesHighlight": "off",
+  "workbench.activityBar.location": "hidden",
+  "editor.tokenColorCustomizations": {},
+  "python.analysis.fixAll": [],
+  "workbench.editor.tabActionLocation": "left",
+  "vim.insertModeKeyBindings": [],
+  "editor.fontVariations": false,
+  "workbench.colorCustomizations": {
+    // https://code.visualstudio.com/api/references/theme-color
+    "[Default Dark Modern]": {
+      // Defaults: https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_modern.json
+      "editor.lineHighlightBackground": "#333",
+    },
+    // https://dev.to/sfarias051/how-to-change-the-terminal-style-in-vscode-in-an-easy-way-5139
+    "terminal.background": "#073642"
+  },
+  "workbench.settings.applyToAllProfiles": [
+  ],
+  "emmet.triggerExpansionOnTab": true,
+  "html.autoClosingTags": false,
+  "chat.commandCenter.enabled": false
 }
