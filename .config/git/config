@@ -7,7 +7,7 @@
 	# editor = atom --wait
 	editor = code --wait
 	# editor = nova --wait
-	excludesfile = /Users/phil/.gitignore_global
+	excludesfile = /Users/phil/.config/git/ignore
 [color]
 	ui = true
 # Added by GitHub for Mac:
