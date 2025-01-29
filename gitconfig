@@ -6,6 +6,7 @@
 	# editor = mvim --nofork
 	# editor = atom --wait
 	editor = code --wait
+	# editor = nova --wait
 	excludesfile = /Users/phil/.gitignore_global
 [color]
 	ui = true
