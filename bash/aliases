@@ -39,7 +39,7 @@ alias ....='cd ../../..' # Go up three directories
 alias	md='mkdir -p'
 alias	rd=rmdir
 
-alias d='docker-compose'
+alias d='docker compose'
 
 alias h='heroku'
 

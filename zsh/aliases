@@ -90,7 +90,7 @@ alias ....='cd ../../..' # Go up three directories
 alias	md='mkdir -p'
 alias	rd=rmdir
 
-alias d='docker-compose'
+alias d='docker compose'
 
 alias h='heroku'
 
@@ -115,7 +115,7 @@ alias activate='source venv/bin/activate'
 alias pipc='pip-compile --upgrade --quiet --generate-hashes'
 
 alias ppip='python -m pip'
-alias ppipinstall='python -m pip install -r requirements.txt'
+alias ppipinstall='python -m pip install --require-hashes --no-deps -r requirements.txt'
 
 
 ########################################################################
