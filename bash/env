@@ -48,26 +48,10 @@ if command_exists rbenv ; then
     eval "$(rbenv init -)"
 fi
 
-
-## PYTHON
-
-# For pyenv:
-# https://github.com/pyenv/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib
-CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
-
-#export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
-#export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
-
-if command_exists pyenv ; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-
 ## OTHER
+
+# ?
+CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 
 # added by travis gem
 [ -f /Users/phil/.travis/travis.sh ] && source /Users/phil/.travis/travis.sh
-
-# Inserted into .bashrc by FZF:
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
