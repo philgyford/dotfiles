@@ -61,7 +61,7 @@ alias baymoo="telnet baymoo.org 8888"
 
 # Run a webserver from the current directory.
 # Access it at http://localhost:8000
-alias runserver="python -m http.server 8000"
+alias runserver="python3 -m http.server 8000"
 
 # For a script I often use in local development websites:
 alias run="./run"
@@ -114,8 +114,8 @@ alias activate='source venv/bin/activate'
 # Generate requirements.txt from requirements.in:
 alias pipc='pip-compile --upgrade --quiet --generate-hashes'
 
-alias ppip='python -m pip'
-alias ppipinstall='python -m pip install --require-hashes --no-deps -r requirements.txt'
+alias ppip='python3 -m pip'
+alias ppipinstall='python3 -m pip install --require-hashes --no-deps -r requirements.txt'
 
 
 ########################################################################
