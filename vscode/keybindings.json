@@ -39,26 +39,25 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "vim.active && vim.use<C-w>"
+    "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
+
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "vim.active && vim.use<C-w>"
-  },
-  {
-    "command": "workbench.action.navigateUp",
-    "when": "vim.active && vim.use<C-w>"
+  "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
+
   },
   {
     "key": "ctrl+k",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "command": "workbench.action.navigateUp",
+  "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
+
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "vim.active && vim.use<C-w>"
+    "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
   },
 
   // Hide the annoying find widget:
