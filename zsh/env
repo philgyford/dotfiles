@@ -1,3 +1,7 @@
 
 # uv 2024-08-29
 export PATH="/Users/phil/.local/bin:$PATH"
+
+# After brew install mysql-client so that I can run Django tests in parallel,
+# on a MariaDB/MySQL database, which reqiures mysqldump, 2025-06-05
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
