@@ -2,7 +2,7 @@
   "editor.accessibilitySupport": "off",
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.rulers": [80],
 
   "editor.wordWrap": "on",
@@ -17,7 +17,7 @@
     "**/*~": true
   },
   "files.associations": {
-    "*.html": "jinja-html",
+    "*.html": "html",
     "*.md": "markdown",
     "*.php": "php"
   },
@@ -275,5 +275,12 @@
   ],
   "emmet.triggerExpansionOnTab": true,
   "html.autoClosingTags": false,
-  "chat.commandCenter.enabled": false
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.compositeKeys": {
+    
+  }
 }
