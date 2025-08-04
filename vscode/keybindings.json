@@ -91,5 +91,15 @@
     "key": "cmd+f",
     "command": "-list.find",
     "when": "listFocus && listSupportsFind"
-  }
+  },
+  {
+  "key": "m a",
+  "command": "explorer.newFile",
+  "when": "explorerViewletVisible && filesExplorerFocus"
+},
+{
+  "key": "m shift+a",
+  "command": "explorer.newFolder",
+  "when": "explorerViewletVisible && filesExplorerFocus"
+}
 ]
