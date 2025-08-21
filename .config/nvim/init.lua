@@ -1,3 +1,5 @@
+local vscode = require("vscode")
+
 -- Use , for leader
 vim.g.mapleader = ","
 
@@ -57,3 +59,38 @@ end, { noremap = true, silent = true })
 -- In visual mode, indent and keep selection
 vim.keymap.set('x', '>', '>gv', { noremap = true, silent = true })
 vim.keymap.set('x', '<', '<gv', { noremap = true, silent = true })
+
+-- Use ,e to focus the file Explorer
+vim.keymap.set('n', '<leader>e', function()
+  vim.fn.VSCodeNotify('workbench.view.explorer')
+end, { noremap = true, silent = true })
+
+-- undo/REDO via vscode
+-- via https://github.com/vscode-neovim/vscode-neovim/issues/1139#issuecomment-1507445201
+if vim.g.vscode then
+    vim.keymap.set("n","u","<Cmd>call VSCodeNotify('undo')<CR>")
+    vim.keymap.set("n","<C-r>","<Cmd>call VSCodeNotify('redo')<CR>") 
+end
+
+-- When searching with / put first match in center of screen
+-- I THINK - DOESN'T WORK
+-- https://github.com/vscode-neovim/vscode-neovim/issues/1909#issuecomment-3150194545
+vim.keymap.set("n", "*", function()
+  vim.cmd(":norm! *")
+  local curline = vim.fn.line(".")
+  vscode.call("revealLine", { args = {lineNumber = curline, at = "center"} })
+end, { noremap = true, silent = true })
+
+-- When jumping to next match with n put it in center of screen
+vim.keymap.set("n", "n", function()
+	vim.cmd(":norm! n")
+	local curline = vim.fn.line(".")
+	vscode.call("revealLine", { args = {lineNumber = curline, at = "center"} })
+end, { noremap = true, silent = true })
+
+-- When jumping to previous match with N put it in center of screen
+vim.keymap.set("n", "N", function()
+	vim.cmd(":silent! norm! N")
+	local curline = vim.fn.line(".")
+	vscode.call("revealLine", { args = {lineNumber = curline, at = "center"} })
+end, { noremap = true, silent = true })
