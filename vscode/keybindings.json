@@ -40,19 +40,16 @@
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
     "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
-
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-  "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
-
+    "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-  "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
-
+    "when": "editorTextFocus || terminalFocus || vim.active && vim.mode == 'Normal'"
   },
   {
     "key": "ctrl+l",
@@ -92,13 +89,13 @@
     "when": "listFocus && listSupportsFind"
   },
   {
-  "key": "m a",
-  "command": "explorer.newFile",
-  "when": "explorerViewletVisible && filesExplorerFocus"
-},
-{
-  "key": "m shift+a",
-  "command": "explorer.newFolder",
-  "when": "explorerViewletVisible && filesExplorerFocus"
-}
+    "key": "m a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "m shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
 ]
