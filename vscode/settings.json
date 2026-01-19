@@ -2,7 +2,7 @@
   "editor.accessibilitySupport": "off",
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [80],
 
   "editor.wordWrap": "on",
@@ -96,7 +96,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[scss]": {
     "editor.tabSize": 2,
@@ -232,7 +232,7 @@
   "html.format.indentInnerHtml": true,
   "editor.stickyTabStops": true,
   "editor.insertSpaces": false,
-  "python.defaultInterpreterPath": "/Users/phil/.local/share/virtualenvs/vscode-T2pk6zJs/bin/python",
+  "python.defaultInterpreterPath": "/Users/phil/.local/share/uv/python/cpython-3.13.0-macos-aarch64-none/bin/python3.13",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
@@ -241,7 +241,7 @@
   "editor.guides.bracketPairs": "active",
   "vim.smartRelativeLine": true,
   "window.commandCenter": true,
-  "editor.fontFamily": "'Monaspace Neon', monospace",
+  "editor.fontFamily": "'Monaspace Neon NF', monospace",
   // For Monapsace:
   // calt: Contextual alternates
   // liga: Ligatures
@@ -282,5 +282,6 @@
   },
   "vscode-neovim.compositeKeys": {
     
-  }
+  },
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
