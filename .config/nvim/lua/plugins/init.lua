@@ -13,7 +13,7 @@ return {
   require 'plugins.gitsigns',
 
   -- Automatic indentation style detection
-  -- https://github.com/NMAC427/guess-indent.nvim
+  -- https://github.com/nmac427/guess-indent.nvim
 	require 'plugins.guess-indent',
 
   -- Indentation guides

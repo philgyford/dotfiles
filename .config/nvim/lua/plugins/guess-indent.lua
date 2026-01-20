@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	config = function()
 		require('guess-indent').setup {}
-		-- From https://github.com/NMAC427/guess-indent.nvim/issues/18
+		-- From https://github.com/nmac427/guess-indent.nvim/issues/18
 		vim.keymap.set('n', '<Tab>g', vim.cmd.GuessIndent, { desc = "GuessIndent (manual)" })
 		-- to tabs
 		vim.keymap.set('n', '<Tab>t', '<Cmd>set noexpandtab<CR><Cmd>%retab!<CR><Cmd>set tabstop=8<CR>', { noremap = true, desc = "retab to tabs" })
