@@ -3,7 +3,7 @@ vim.g.mapleader = ","
 
 
 if vim.g.vscode then
-	require("vscode-init")
+	require("init-vscode")
 else
-	require("neovim-init")
+	require("init")
 end
