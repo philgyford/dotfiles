@@ -1,3 +1,4 @@
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 

@@ -1,6 +1,9 @@
 
 -- Only when using Neovim extension in VS Code
 
+-- Leader should be set as early as possible
+vim.g.mapleader = ","
+
 local vscode = require("vscode")
 
 local map = vim.keymap.set
