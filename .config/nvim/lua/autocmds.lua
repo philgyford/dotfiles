@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd('FileType', {
     )
   end,
   group = user_grp,
-}
+})
 
 -- Wrap and check for spell in text by filetype.
 -- From https://dzx.fr/blog/modern-neovim-config-from-scratch/#treesitter
