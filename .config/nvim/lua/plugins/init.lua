@@ -28,6 +28,10 @@ return {
   -- https://github.com/nvim-lualine/lualine.nvim
   require 'plugins.lualine',
 
+  -- File explorer
+  -- https://github.com/nvim-neo-tree/neo-tree.nvim
+  require 'plugins.neo-tree',
+
   -- Fuzzy finder over lists
   -- https://github.com/nvim-telescope/telescope.nvim
   require 'plugins.telescope',
