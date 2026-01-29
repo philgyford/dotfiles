@@ -6,7 +6,7 @@ return {
     keys = {
       {
         -- Ripgrep version ignores files like .pyc:
-        "<leader>t", "<cmd>CommandTRipgrep<CR>",
+        "<leader>t", "<cmd>CommandTRipgrep<CR>"
       },
     },
     build = 'cd lua/wincent/commandt/lib && make',
