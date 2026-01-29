@@ -80,4 +80,9 @@ vim.opt.textwidth = 79
 -- Change automatically if textwidth is adjusted
 vim.opt.colorcolumn = { "+1" }
 
+-- Add patterns of files to ignore when expanding wildcards
+-- Disabled just because command-t doesn't use it and I haven't needed it
+-- for anyting else yet.
+-- vim.opt.wildignore = {'.git', 'node_modules', '*.pyc'}
+
 -- vim: ts=2 sts=2 sw=2 et

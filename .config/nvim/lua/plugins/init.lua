@@ -4,6 +4,10 @@ return {
   -- https://github.com/saghen/blink.cmp
   require 'plugins.blink-cmp',
 
+  -- Fast open files etc. Like Ctrlp
+  -- https://github.com/wincent/command-t/
+  require 'plugins.command-t',
+
   -- Formatter
   -- https://github.com/stevearc/conform.nvim
   require 'plugins.conform',
