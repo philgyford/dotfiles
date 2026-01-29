@@ -1,9 +1,9 @@
 dotfiles
 ========
 
-My system config stuff.
+My system config stuff. Include Neovim config (in `.config/nvim/`).
 
-Recently (2020) switched from using bash to zsh, so the bash files probably won't
+Switched from using bash to zsh in 2020, so the bash files probably won't
 get many updates from here on.
 
 For each of the files/folders do something like:
