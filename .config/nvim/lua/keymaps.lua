@@ -38,6 +38,7 @@ local maps = {
   [';'] = { cmd = ':', desc = 'Enter command mode', },
   ['<leader>l'] = { cmd = '<cmd>set list!<CR>', desc = 'Toggle invisible characters', },
   ['<leader><space>'] = { cmd = '<cmd>nohlsearch<CR>', desc = 'Clear search highlighting', },
+  ['<space>'] = { cmd = 'za', desc = 'Fold current line', },
   -- Split, and move cursor to new split
   ['<leader>w'] = { cmd = '<C-w>v<C-w>l', desc = 'Split vertically', },
   ['<leader>W'] = { cmd = '<C-w>s<C-w>j', desc = 'Split horizontally', },
@@ -49,19 +50,19 @@ local maps = {
   -- Change window sizes
   ['<leader>1'] = {
     cmd = string.format('<cmd>set lines=%d columns=%d<CR>', VERTICAL_LINES, DEFAULT_COLUMNS),
-    desc = 'Resize: 1 document  + nerdtree',
+    desc = 'Resize: 1 doc + neo-tree',
   },
   ['<leader>2'] = {
     cmd = string.format('<cmd>set lines=%d columns=217<CR>', VERTICAL_LINES),
-    desc = 'Resize: 2 documents + nerdtree',
+    desc = 'Resize: 2 docs + neo-tree',
   },
   ['<leader>3'] = {
     cmd = string.format('<cmd>set lines=%d columns=316<CR>', VERTICAL_LINES),
-    desc = 'Resize: 3 documents + nerdtree',
+    desc = 'Resize: 3 docs + neo-tree',
   },
   ['<leader>9'] = {
     cmd = string.format('<cmd>set lines=%d columns=86<CR>', VERTICAL_LINES),
-    desc = 'Resize: 1 document',
+    desc = 'Resize: 1 doc',
   },
   ['<leader>0'] = {
     cmd = '<cmd>vertical resize 86<CR>',

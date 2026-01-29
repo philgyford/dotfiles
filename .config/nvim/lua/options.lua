@@ -75,10 +75,23 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- When a bracket is inserted, briefly jump to the matching one.
+vim.o.showmatch = true
+
 -- Text wrapping / line length indicators
 vim.opt.textwidth = 79
 -- Change automatically if textwidth is adjusted
 vim.opt.colorcolumn = { "+1" }
+
+-- Don't have code folded by default.
+-- See plugins/treesitter.lua for a bit more on folding
+vim.opt.foldenable = false
+
+-- Makes the folded line syntax-highlighted.
+vim.opt.foldtext = ""
+
+-- Don't nest code below this many levels deep (default 20)
+vim.opt.foldnestmax = 4
 
 -- Add patterns of files to ignore when expanding wildcards
 -- Disabled just because command-t doesn't use it and I haven't needed it
