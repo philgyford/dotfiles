@@ -39,6 +39,8 @@ local maps = {
   ['<leader>l'] = { cmd = '<cmd>set list!<CR>', desc = 'Toggle invisible characters', },
   ['<leader><space>'] = { cmd = '<cmd>nohlsearch<CR>', desc = 'Clear search highlighting', },
   ['<space>'] = { cmd = 'za', desc = 'Fold current line', },
+  -- e.g. for the :Lazy window:
+  ['<esc>'] = { cmd = '<cmd>fc<CR>', desc = 'Close floating window', },
   -- Split, and move cursor to new split
   ['<leader>w'] = { cmd = '<C-w>v<C-w>l', desc = 'Split vertically', },
   ['<leader>W'] = { cmd = '<C-w>s<C-w>j', desc = 'Split horizontally', },
