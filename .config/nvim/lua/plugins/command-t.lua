@@ -13,6 +13,10 @@ return {
     config = function()
       require('wincent.commandt').setup({
         -- Customizations go here
+
+        -- Start from current file and work up to the "SCM root", and
+        -- use that as the directory to search within.
+        traverse = 'file',
       })
     end,
   }
