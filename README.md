@@ -27,7 +27,7 @@ You should do something like this:
     $ ln -s ~/Projects/personal/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
     $ ln -s ~/Projects/personal/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
-## Starship promit
+## Starship prompt
 
     $ ln -s ~/Projects/personal/dotfiles/.config/starship.toml ~/.config/starship.toml
 
