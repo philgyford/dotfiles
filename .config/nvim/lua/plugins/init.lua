@@ -16,6 +16,10 @@ return {
 	-- https://github.com/stevearc/conform.nvim
 	require("plugins.conform"),
 
+	-- Git commands
+	-- https://github.com/tpope/vim-fugitive
+	require("plugins.fugitive"),
+
 	-- Git integration for buffers
 	-- https://github.com/lewis6991/gitsigns.nvim
 	require("plugins.gitsigns"),
