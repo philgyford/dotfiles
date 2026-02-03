@@ -19,10 +19,14 @@ return {
 					filtered_items = {
 						visible = true, -- show hidden files by default (H to toggle)
 						never_show = {
+							"__pycache__",
 							".DS_Store",
 							".git",
+							".ruff_cache",
+							".venv",
 						},
 						never_show_by_pattern = {
+							"*.pyc",
 							"*.un~",
 						},
 					},
