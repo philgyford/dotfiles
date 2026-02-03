@@ -10,6 +10,11 @@ return {
 		lazy = false, -- neo-tree will lazily load itself
 		config = function()
 			require("neo-tree").setup({
+				default_component_configs = {
+					name = {
+						use_filtered_colors = false,
+					},
+				},
 				filesystem = {
 					filtered_items = {
 						visible = true, -- show hidden files by default (H to toggle)
