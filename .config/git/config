@@ -5,8 +5,9 @@
 	#editor = subl -w
 	# editor = mvim --nofork
 	# editor = atom --wait
-	editor = code --wait
+	# editor = code -wait
 	# editor = nova --wait
+	editor = nvim
 	excludesfile = /Users/phil/.config/git/ignore
 [color]
 	ui = true
