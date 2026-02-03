@@ -1,62 +1,66 @@
 return {
 
-  -- Completion
-  -- https://github.com/saghen/blink.cmp
-  require 'plugins.blink-cmp',
+	-- Completion
+	-- https://github.com/saghen/blink.cmp
+	require("plugins.blink-cmp"),
 
-  -- Fast open files etc. Like Ctrlp
-  -- https://github.com/wincent/command-t/
-  require 'plugins.command-t',
+	-- Fast open files etc. Like Ctrlp
+	-- https://github.com/wincent/command-t/
+	require("plugins.command-t"),
 
-  -- Formatter
-  -- https://github.com/stevearc/conform.nvim
-  require 'plugins.conform',
+	-- Comments
+	-- https://github.com/numToStr/Comment.nvim
+	require("plugins.comment"),
 
-  -- Git integration for buffers
-  -- https://github.com/lewis6991/gitsigns.nvim
-  require 'plugins.gitsigns',
+	-- Formatter
+	-- https://github.com/stevearc/conform.nvim
+	require("plugins.conform"),
 
-  -- Automatic indentation style detection
-  -- https://github.com/nmac427/guess-indent.nvim
-	require 'plugins.guess-indent',
+	-- Git integration for buffers
+	-- https://github.com/lewis6991/gitsigns.nvim
+	require("plugins.gitsigns"),
 
-  -- Indentation guides
-  -- https://github.com/lukas-reineke/indent-blankline.nvim
-  require 'plugins.indent-blankline',
+	-- Automatic indentation style detection
+	-- https://github.com/nmac427/guess-indent.nvim
+	require("plugins.guess-indent"),
 
-  -- Configures LuaLS (?)
-  -- https://github.com/folke/lazydev.nvim
-  require 'plugins.lspconfig',
+	-- Indentation guides
+	-- https://github.com/lukas-reineke/indent-blankline.nvim
+	require("plugins.indent-blankline"),
 
-  -- Statusline
-  -- https://github.com/nvim-lualine/lualine.nvim
-  require 'plugins.lualine',
+	-- Configures LuaLS (?)
+	-- https://github.com/folke/lazydev.nvim
+	require("plugins.lspconfig"),
 
-  -- File explorer
-  -- https://github.com/nvim-neo-tree/neo-tree.nvim
-  require 'plugins.neo-tree',
+	-- Statusline
+	-- https://github.com/nvim-lualine/lualine.nvim
+	require("plugins.lualine"),
 
-  -- Fuzzy finder over lists
-  -- https://github.com/nvim-telescope/telescope.nvim
-  require 'plugins.telescope',
+	-- File explorer
+	-- https://github.com/nvim-neo-tree/neo-tree.nvim
+	require("plugins.neo-tree"),
 
-  -- Installing, updating and removing tree-sitter parsers, and queries for enabling its features
-  -- https://github.com/nvim-treesitter/nvim-treesitter
-  require 'plugins.treesitter',
+	-- Fuzzy finder over lists
+	-- https://github.com/nvim-telescope/telescope.nvim
+	require("plugins.telescope"),
 
-  -- Shows context (e.g. the class or function you're in, if it's off the top of the window)
-  -- https://github.com/nvim-treesitter/nvim-treesitter-context
-  require 'plugins.treesitter-context',
+	-- Installing, updating and removing tree-sitter parsers, and queries for enabling its features
+	-- https://github.com/nvim-treesitter/nvim-treesitter
+	require("plugins.treesitter"),
 
-  -- Shows available keybindings in a popup as you type
-  -- https://github.com/folke/which-key.nvim
-  require 'plugins.which-key',
+	-- Shows context (e.g. the class or function you're in, if it's off the top of the window)
+	-- https://github.com/nvim-treesitter/nvim-treesitter-context
+	require("plugins.treesitter-context"),
 
-  ---------------------------------------------------------------------------
-  -- Themes
-  -- Enable/disable to change default colorscheme
+	-- Shows available keybindings in a popup as you type
+	-- https://github.com/folke/which-key.nvim
+	require("plugins.which-key"),
 
-  require 'plugins.catppuccin',
+	---------------------------------------------------------------------------
+	-- Themes
+	-- Enable/disable to change default colorscheme
 
-  -- require 'plugins.tokyonight',
+	require("plugins.catppuccin"),
+
+	-- require 'plugins.tokyonight',
 }
