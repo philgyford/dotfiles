@@ -18,8 +18,11 @@ vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!"<CR>')
 
+-- Keep blocks selected when in/outdenting
+vim.keymap.set("v", "<", "<gv", { desc = "Outdent and keep selection" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
+
 -- Keymap helper options
-local opts = { noremap = true, silent = true }
 local VERTICAL_LINES = 96
 local DEFAULT_COLUMNS = 121
 
@@ -55,6 +58,7 @@ local maps = {
 	["<space>"] = { cmd = "za", desc = "Fold current line" },
 	-- e.g. for the :Lazy window:
 	["<esc>"] = { cmd = "<cmd>fc<CR>", desc = "Close floating window" },
+	-- Change tabs/spaces as needed:
 	-- Split, and move cursor to new split
 	["<leader>w"] = { cmd = "<C-w>v<C-w>l", desc = "Split vertically" },
 	["<leader>W"] = { cmd = "<C-w>s<C-w>j", desc = "Split horizontally" },
@@ -95,6 +99,28 @@ for lhs, map in pairs(maps) do
 	})
 end
 
+-- INDENTATION --
+-- Functions to set indentation
+local function set_indent(ts, sts, sw, expandtab)
+	vim.opt.tabstop = ts -- number of spaces that a <Tab> counts for
+	vim.opt.softtabstop = sts -- number of spaces when editing
+	vim.opt.shiftwidth = sw -- number of spaces used for autoindent
+	vim.opt.expandtab = expandtab
+end
+-- Keymaps to toggle indentation
+vim.keymap.set("n", "\\t", function()
+	set_indent(2, 2, 2, false)
+end, { desc = "Tabs, 2 spaces" })
+vim.keymap.set("n", "\\T", function()
+	set_indent(4, 4, 4, false)
+end, { desc = "Tabs, 4 spaces" })
+vim.keymap.set("n", "\\s", function()
+	set_indent(2, 2, 2, true)
+end, { desc = "Spaces, 2 spaces" })
+vim.keymap.set("n", "\\S", function()
+	set_indent(4, 4, 4, true)
+end, { desc = "Spaces, 4 spaces" })
+
 -- UNUSED THINGS
 
 -- Fold HTML tag (visual select tag, then zf)
@@ -110,4 +136,3 @@ end
 -- vim.keymap.set('n', '<leader>sv', '<cmd>source $MYVIMRC<CR>', opts)
 
 -- vim: ts=2 sts=2 sw=2 et
-

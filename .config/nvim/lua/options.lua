@@ -15,9 +15,9 @@ vim.o.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+-- vim.schedule(function()
+--	vim.o.clipboard = "unnamedplus"
+-- end)
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -67,7 +67,15 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 1
+
+vim.o.autoindent = true
+-- Number of spaces for each step of (auto)indent and >> <<
+vim.o.shiftwidth = 4
+-- Number of spaces for each step of (auto)indent and >> <<
+vim.o.softtabstop = 4
+-- Number of visual spaces per tab
+vim.o.tabstop = 4
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -92,10 +100,13 @@ vim.opt.foldtext = ""
 -- Don't nest code below this many levels deep (default 20)
 vim.opt.foldnestmax = 4
 
+-- Look for .nvim.lua files in local project directory
+vim.opt.exrc = true
+vim.opt.secure = true
+
 -- Add patterns of files to ignore when expanding wildcards
 -- Disabled just because command-t doesn't use it and I haven't needed it
 -- for anyting else yet.
 -- vim.opt.wildignore = {'.git', 'node_modules', '*.pyc'}
 
 -- vim: ts=2 sts=2 sw=2 et
-
