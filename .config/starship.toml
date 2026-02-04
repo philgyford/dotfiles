@@ -21,37 +21,45 @@ success_symbol = "[➜](bold green)"
 error_symbol = "[✖](bold red)"
 
 [directory]
-style = "136"  # yellow
+# style = "136"  # yellow
+style = "green"
 truncate_to_repo = false
 truncation_length = 3
 
 [git_branch]
-style = "61"  # violet
+# style = "61"  # violet
+style = "blue"
 symbol = " "
 
 [git_status]
-style = "61"  # violet
+# style = "61"  # violet
+style = "purple"
 
 [hostname]
 ssh_only = false
-style = "166"  # orange
+# style = "166"  # orange
+style = "yellow"
 trim_at	= "."
 
 [nodejs]
-style = "33"  # blue
+# style = "33"  # blue
+style = "cyan"
 symbol = "⬢ "
 
 [python]
-style = "64"  # green
+# style = "64"  # green
+style = "cyan"
 symbol = " "
 
 [ruby]
-style = "37"  # cyan
+# style = "37"  # cyan
+style = "cyan"
 symbol = " "
 
 [username]
 show_always = true
-style_user = "160"  # red
+# style_user = "160"  # red
+style_user = "red"
 
 
 
