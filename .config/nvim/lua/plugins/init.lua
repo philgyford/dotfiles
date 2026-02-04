@@ -1,3 +1,5 @@
+-- Non-theme plugins
+
 return {
 
 	-- Completion
@@ -60,11 +62,6 @@ return {
 	-- https://github.com/folke/which-key.nvim
 	require("plugins.which-key"),
 
-	---------------------------------------------------------------------------
-	-- Themes
-	-- Enable/disable to change default colorscheme
-
-	require("plugins.catppuccin"),
-
-	-- require 'plugins.tokyonight',
+    -- Load any theme plugins enabled in plugins/themes/init.lua
+	require("plugins.themes"),
 }
