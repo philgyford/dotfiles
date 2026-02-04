@@ -128,4 +128,3 @@ autocmd("BufReadPost", {
 	group = augroup("last_loc", { clear = true }),
 	desc = "Go to last location when opening a buffer",
 })
-
