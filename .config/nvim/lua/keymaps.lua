@@ -22,6 +22,9 @@ vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!"<CR>')
 vim.keymap.set("v", "<", "<gv", { desc = "Outdent and keep selection" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
 
+-- Make cmd-S save file, because of my muscle memory
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<CR><esc>", { desc = "Save file" })
+
 -- Keymap helper options
 local VERTICAL_LINES = 96
 local DEFAULT_COLUMNS = 121
