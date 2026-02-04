@@ -7,6 +7,9 @@
 
 vim.o.autoindent = true
 
+-- Disable creation of backup files (e.g., file~)
+vim.o.backup = false
+
 -- Enable break indent
 vim.o.breakindent = true
 
@@ -23,8 +26,11 @@ vim.o.breakindent = true
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- Show which line your cursor is on
+-- Highlight the line under the cursor
 vim.o.cursorline = true
+
+-- Convert tabs to spaces automatically
+vim.o.expandtab = true
 
 -- Default file encoding for new and opened files
 vim.o.fileencoding = "utf-8"
@@ -34,6 +40,9 @@ vim.o.ignorecase = true
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = "split"
+
+-- Disable lazy redraw for smoother animations (set to true for macros)
+vim.o.lazyredraw = false
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 -- See vim.opt.listchars
@@ -51,6 +60,9 @@ vim.o.relativenumber = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 3
 
+-- Specify what’s saved in a session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- Number of spaces for each step of (auto)indent and >> <<
 vim.o.shiftwidth = 4
 
@@ -60,11 +72,14 @@ vim.o.showmatch = true
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
--- Keep signcolumn on by default
+-- Always show the sign column (for LSP, Git, etc.)
 vim.o.signcolumn = "yes"
 
 -- Case-insensitive search unless uppercase letters are used
 vim.o.smartcase = true
+
+-- Enable smart indentation when starting a new line
+vim.o.smartindent = true
 
 -- Number of spaces for each step of (auto)indent and >> <<
 vim.o.softtabstop = 4
@@ -73,17 +88,29 @@ vim.o.softtabstop = 4
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+-- Keep text layout stable when splitting (preserves scroll position)
+vim.o.splitkeep = "screen"
+
+-- Enable swap files for recovery (set to false to disable)
+vim.o.swapfile = true
+
 -- Number of visual spaces per tab
 vim.o.tabstop = 4
+
+-- Enable full 24-bit color support in the terminal
+vim.o.termguicolors = true
 
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
--- Save undo history
+-- Save undo history to disk for persistent undo between sessions
 vim.o.undofile = true
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 100
+
+-- Prevent overwriting a file being edited by another process
+vim.o.writebackup = false
 
 -----------------------------------------
 -- vim.opt settings
@@ -125,6 +152,9 @@ vim.opt.listchars = {
 
 -- Text wrapping / line length indicators
 vim.opt.textwidth = 79
+
+-- Allow cursor to move freely between lines in Normal mode
+vim.opt.whichwrap:append("<>[]hl")
 
 -- Add patterns of files to ignore when expanding wildcards
 -- Disabled just because command-t doesn't use it and I haven't needed it
