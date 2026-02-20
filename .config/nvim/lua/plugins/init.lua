@@ -14,6 +14,10 @@ return {
 	-- https://github.com/stevearc/conform.nvim
 	require("plugins.conform"),
 
+	-- Emoji selector
+	-- https://github.com/allaman/emoji.nvim
+	require("plugins.emoji"),
+
 	-- Git commands
 	-- https://github.com/tpope/vim-fugitive
 	require("plugins.fugitive"),
