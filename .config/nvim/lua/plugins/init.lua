@@ -6,10 +6,6 @@ return {
 	-- https://github.com/saghen/blink.cmp
 	require("plugins.blink-cmp"),
 
-	-- Fast open files etc. Like Ctrlp
-	-- https://github.com/wincent/command-t/
-	require("plugins.command-t"),
-
 	-- Comments
 	-- https://github.com/numToStr/Comment.nvim
 	require("plugins.comment"),
@@ -62,6 +58,6 @@ return {
 	-- https://github.com/folke/which-key.nvim
 	require("plugins.which-key"),
 
-    -- Load any theme plugins enabled in plugins/themes/init.lua
+	-- Load any theme plugins enabled in plugins/themes/init.lua
 	require("plugins.themes"),
 }
