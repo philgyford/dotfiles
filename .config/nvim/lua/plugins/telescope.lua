@@ -62,6 +62,14 @@ return {
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
+				defaults = {
+					-- See `:help telescope.layout`
+					layout_strategy = "flex",
+					layout_config = {
+						horizontal = { width = 0.9 },
+						vertical = { width = 0.9 },
+					},
+				},
 				pickers = {
 					find_files = {
 						-- Like command-t's display:
@@ -86,7 +94,9 @@ return {
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-			vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "[S]earch [F]iles" })
+			-- Duplicate because of command-t habit:
+			vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "[S]earch [F]ilenames" })
+			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ilenames" })
 			vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
