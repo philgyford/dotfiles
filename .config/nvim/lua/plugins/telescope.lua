@@ -78,6 +78,13 @@ return {
 						-- Only show the filenames, not preview of contents:
 						previewer = false,
 					},
+					live_grep = {
+						file_ignore_patterns = { "node_modules", ".git", "venv", ".venv" },
+						additional_args = function(_)
+							-- Make it search hidden files, like all these ones in a .config directory!
+							return { "--hidden" }
+						end,
+					},
 				},
 				extensions = {
 					["ui-select"] = {
