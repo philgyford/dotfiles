@@ -75,7 +75,6 @@ local maps = {
 	["U"] = { cmd = "<C-r>", desc = "Redo" },
 	-- e.g. for the :Lazy window:
 	["<esc>"] = { cmd = "<cmd>fc<CR>", desc = "Close floating window" },
-	-- Change tabs/spaces as needed:
 	-- Split, and move cursor to new split
 	["<leader>w"] = { cmd = "<C-w>v<C-w>l", desc = "Split vertically" },
 	["<leader>W"] = { cmd = "<C-w>s<C-w>j", desc = "Split horizontally" },

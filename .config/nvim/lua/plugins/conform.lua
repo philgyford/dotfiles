@@ -37,10 +37,14 @@ return {
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+
+				css = { "biome" },
+				html = { "biome" },
+				javascript = { "biome", "biome-organize-imports" },
+				json = { "biome" },
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			},
 		},
 	},
 }
 -- vim: ts=2 sts=2 sw=2 et
-

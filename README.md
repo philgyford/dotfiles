@@ -20,6 +20,10 @@ I also had to install at least these things using Homebrew, for various plugins:
     $ brew install tree-sitter-cli
     $ brew install npm  # For emmet-language-server
 
+And then:
+
+    $ npm install @biomejs/biome  # For Biome formatting HTML, CSS, JS, etc
+
 ## VS Code
 
 You should do something like this:
