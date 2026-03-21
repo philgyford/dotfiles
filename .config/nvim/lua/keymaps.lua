@@ -35,22 +35,35 @@ if vim.fn.has("gui_running") == 1 then
 	vim.opt.columns = DEFAULT_COLUMNS
 end
 
+-- DON'T THINK WE NEED THIS BIT NOW?
 -- Make cmd-c and cmd-v work within Neovide app
-if vim.g.neovide then
-	local function save()
-		vim.cmd.write()
-	end
-	local function copy()
-		vim.cmd([[normal! "+y]])
-	end
-	local function paste()
-		vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
-	end
+-- if vim.g.neovide then
+-- 	local function save()
+-- 		vim.cmd.write()
+-- 	end
+-- 	local function copy()
+-- 		vim.cmd([[normal! "+y]])
+-- 	end
+-- 	local function paste()
+-- 		vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
+-- 	end
+--
+-- 	vim.keymap.set({ "n", "i", "v" }, "<D-s>", save, { desc = "Save" })
+-- 	vim.keymap.set("v", "<D-c>", copy, { silent = true, desc = "Copy" })
+-- 	vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-v>", paste, { silent = true, desc = "Paste" })
+-- end
 
-	vim.keymap.set({ "n", "i", "v" }, "<D-s>", save, { desc = "Save" })
-	vim.keymap.set("v", "<D-c>", copy, { silent = true, desc = "Copy" })
-	vim.keymap.set({ "n", "i", "v", "c", "t" }, "<D-v>", paste, { silent = true, desc = "Paste" })
-end
+-- Make cmd-* copy/paste/cut use system clipboard:
+-- Copy (Cmd+C)
+vim.keymap.set("v", "<D-c>", '"+y')
+vim.keymap.set("n", "<D-c>", '"+yy')
+-- Paste (Cmd+V)
+vim.keymap.set({ "n", "v", "i" }, "<D-v>", '"+p')
+-- Cut (Cmd+X)
+vim.keymap.set("v", "<D-x>", '"+d')
+vim.keymap.set("n", "<D-x>", '"+dd')
+-- Insert clipboard content cleanly without leaving insert mode:
+vim.keymap.set("i", "<D-v>", "<C-r>+")
 
 -- Most of our basic keymaps
 local maps = {
