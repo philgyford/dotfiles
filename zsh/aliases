@@ -98,6 +98,8 @@ alias m='./manage.py'
 
 alias c='code .'
 
+alias nv='open -a Neovide'
+
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
 
