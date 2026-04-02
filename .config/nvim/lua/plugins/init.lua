@@ -1,67 +1,35 @@
--- Non-theme plugins
+-- Autocompletion
+require("plugins.blink-cmp")
 
-return {
+-- Theme
+require("plugins.catppuccin-nvim")
 
-	-- Completion
-	-- https://github.com/saghen/blink.cmp
-	require("plugins.blink-cmp"),
+-- Formatting
+require("plugins.conform")
 
-	-- Comments
-	-- https://github.com/numToStr/Comment.nvim
-	require("plugins.comment"),
+-- For searching and inserting emoji
+require("plugins.emoji")
 
-	-- Formatter
-	-- https://github.com/stevearc/conform.nvim
-	require("plugins.conform"),
+-- For showing git status in side column, and much more
+require("plugins.gitsigns")
 
-	-- Emoji selector
-	-- https://github.com/allaman/emoji.nvim
-	require("plugins.emoji"),
+-- For managing LSP servers
+require("plugins.mason")
 
-	-- Git commands
-	-- https://github.com/tpope/vim-fugitive
-	require("plugins.fugitive"),
+-- Lots of mini plugins, all initialised from this one file
+require("plugins.mini")
 
-	-- Git integration for buffers
-	-- https://github.com/lewis6991/gitsigns.nvim
-	require("plugins.gitsigns"),
+-- Navigable sidebar of files
+require("plugins.neo-tree")
 
-	-- Automatic indentation style detection
-	-- https://github.com/nmac427/guess-indent.nvim
-	require("plugins.guess-indent"),
+-- Filepicker, searcher, etc
+require("plugins.telescope")
 
-	-- Indentation guides
-	-- https://github.com/lukas-reineke/indent-blankline.nvim
-	require("plugins.indent-blankline"),
+-- For installing treesitter parsers for different languages
+require("plugins.treesitter")
 
-	-- Configures LuaLS (?)
-	-- https://github.com/folke/lazydev.nvim
-	require("plugins.lspconfig"),
+-- Shows the context of currently-visible window, e.g. class/function name
+require("plugins.treesitter-context")
 
-	-- Statusline
-	-- https://github.com/nvim-lualine/lualine.nvim
-	require("plugins.lualine"),
-
-	-- File explorer
-	-- https://github.com/nvim-neo-tree/neo-tree.nvim
-	require("plugins.neo-tree"),
-
-	-- Fuzzy finder over lists
-	-- https://github.com/nvim-telescope/telescope.nvim
-	require("plugins.telescope"),
-
-	-- Installing, updating and removing tree-sitter parsers, and queries for enabling its features
-	-- https://github.com/nvim-treesitter/nvim-treesitter
-	require("plugins.treesitter"),
-
-	-- Shows context (e.g. the class or function you're in, if it's off the top of the window)
-	-- https://github.com/nvim-treesitter/nvim-treesitter-context
-	require("plugins.treesitter-context"),
-
-	-- Shows available keybindings in a popup as you type
-	-- https://github.com/folke/which-key.nvim
-	require("plugins.which-key"),
-
-	-- Load any theme plugins enabled in plugins/themes/init.lua
-	require("plugins.themes"),
-}
+-- Pops up hints of commands when you press <leader>
+require("plugins.which-key")

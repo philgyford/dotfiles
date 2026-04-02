@@ -1,48 +1,48 @@
--- From https://github.com/nvim-treesitter/nvim-treesitter/discussions/8357#discussioncomment-15409564
+vim.pack.add({
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+})
 
-return {
-	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
-	build = ":TSUpdate",
-	config = function()
-		local treesitter = require("nvim-treesitter")
-		local file_types = {
-			"bash",
-			"c",
-			"diff",
-			"html",
-			"javascript",
-			"jsdoc",
-			"json",
-			"lua",
-			"luadoc",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"query",
-			"regex",
-			"toml",
-			"vim",
-			"vimdoc",
-			"xml",
-			"yaml",
-		}
-		treesitter.setup()
-		treesitter.install(file_types)
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = file_types,
-			callback = function()
-				-- Syntax highlighting, provided by Neovim
-				vim.treesitter.start()
+local treesitter = require("nvim-treesitter")
 
-				-- Folds, provided by Neovim
-				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-				vim.wo.foldmethod = "expr"
-
-				-- Indentation, provided by nvim-treesitter
-				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-			end,
-		})
-	end,
+-- List of supported languages:
+-- https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
+local file_types = {
+	"bash",
+	"c",
+	"diff",
+	"html",
+	"javascript",
+	"jsdoc",
+	"json",
+	"lua",
+	"luadoc",
+	"markdown",
+	"markdown_inline",
+	"python",
+	"query",
+	"regex",
+	"toml",
+	"vim",
+	"vimdoc",
+	"xml",
+	"yaml",
 }
 
+treesitter.setup({})
+
+treesitter.install(file_types)
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = file_types,
+	callback = function()
+		-- Syntax highlighting, provided by Neovim
+		vim.treesitter.start()
+
+		-- Folds, provided by Neovim
+		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo.foldmethod = "expr"
+
+		-- Indentation, provided by nvim-treesitter
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+})
