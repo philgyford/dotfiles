@@ -34,13 +34,24 @@ vim.pack can't):
     $ cd ~/.local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
     $ make
 
-### Adding new plugins
+### Plugins
+
+#### Add a new plugin
 
 1. Create a new file in `.config/nvim/lua/plugins/`. This should call
    `vim.pack.add()` on the repository URL, and then probably do at least
    `require("<PLUGIN>").setup()`.
 2. Then `require()` that file from `.config/nvim/lua/plugins/init.lua`.
 3. Either re-open neovim or do `:restart`.
+
+#### Update plugins
+
+Do `:lua vim.pack.update()` or shortcut `<leader>pu` to update all plugins.
+
+#### Remove a plugin
+
+Do `:lua vim.pack.del({"plugin-name"})`. (And delete file from `plugins`
+folder?)
 
 ### Checking things are OK
 
