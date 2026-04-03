@@ -13,19 +13,20 @@ For each of the files/folders do something like:
 
 ## Neovim
 
-    $ ln -s ~/Projects/personal/dotfiles/.config/nvim/lua ~/.config/nvim/lua
-    $ ln -s ~/Projects/personal/dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
+    $ ln -s ~/Projects/personal/dotfiles/.config/nvim ~/.config/nvim
 
 I also had to install at least these things using Homebrew, for various plugins:
 
     $ brew install ripgrep
+    $ brew install fzf
     $ brew install tree-sitter-cli
-    $ brew install npm  # For emmet-language-server
+    $ brew install npm  # For emmet-language-server and biome
     $ brew install stylua  # For conform to format lua files
 
 And then:
 
-    $ npm install -g @biomejs/biome  # For Biome formatting HTML, CSS, JS, etc
+    $ npm install -g @olrtg/emmet-language-server
+    $ npm install -g @biomejs/biome
 
 And after installing the plugins, including Telescope, we need to manually do
 this build step for its optional fzf plugin (something Lazy.nvim could do, but
@@ -64,14 +65,21 @@ Do `:checkhealth` to get a full report of any problems, or `:checkhealth
 
 1. Add a config file for it in `.config/nvim/lsp/`. See examples [at
    nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)
-2. In `.config/nvim/lua/config/lsp.lua` require the config and then enable the
-   server
-3. Use `:Mason` to install the language server.
+2. At end of `.config/nvim/lua/config/lsp.lua` enable the server.
+3. Use `:MasonInstall <name>` to install the language server.
 
 #### 2. Add treesitter support
 
 1. Ensure it's listed in `file_types` in
    `.config/nvim/lua/pluings/treesitter.lua`.
+
+When you first open a file of a new type, there might be an error but
+nvim-treesitter should then automatically install the new parser. You may
+need to reload the file in question again.
+
+Or manually install a new parser with `:TSInstall <parser>`.
+
+Diagnose problems with `:checkhealth vim.lsp`
 
 ---
 
