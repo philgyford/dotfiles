@@ -2,8 +2,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
-local treesitter = require("nvim-treesitter")
-
 -- List of supported languages:
 -- https://github.com/nvim-treesitter/nvim-treesitter/blob/main/SUPPORTED_LANGUAGES.md
 local file_types = {
@@ -27,6 +25,8 @@ local file_types = {
 	"xml",
 	"yaml",
 }
+
+local treesitter = require("nvim-treesitter")
 
 treesitter.setup({})
 

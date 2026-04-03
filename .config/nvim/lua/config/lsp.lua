@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Enable each one here
-vim.lsp.enable({ "lua_ls" })
+vim.lsp.enable({ "lua_ls", "pyright", "ruff" })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
 -- e.g: We could enable eslint by set vim.g.lsp_on_demands = {"eslint"}
