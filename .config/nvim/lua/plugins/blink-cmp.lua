@@ -14,6 +14,11 @@ require("blink.cmp").setup({
 		nerd_font_variant = "mono",
 	},
 
+	enabled = function()
+		-- Disable autocompletion for these filetypes
+		return not vim.tbl_contains({ "text", "markdown" }, vim.bo.filetype)
+	end,
+
 	-- Use lua, rather than the recommended rust fuzzy matcher which needs building:
 	fuzzy = { implementation = "lua" },
 
