@@ -126,7 +126,7 @@ end
 vim.g.autoformat = true
 vim.g.trouble_lualine = true
 
-opt.exrc = true -- Look for .nvim.lua files in local project directory
+-- opt.exrc = true -- Look for .nvim.lua files in local project directory
 -- opt.secure = true
 
 opt.jumpoptions = "view"
@@ -158,4 +158,4 @@ vim.filetype.add({
 })
 
 -- Used by e.g. Neovide
-vim.o.guifont = "Monaspace Neon NF:h12"
+opt.guifont = "Monaspace Neon NF:h12"
