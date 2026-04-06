@@ -156,3 +156,6 @@ vim.filetype.add({
 		["%.env%.[%w_.-]+"] = "dotenv",
 	},
 })
+
+-- Used by e.g. Neovide
+vim.o.guifont = "Monaspace Neon NF:h12"
