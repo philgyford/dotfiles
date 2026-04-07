@@ -1,6 +1,25 @@
 -------------------------------------------------------------------------------
 -- Install plugins
 
+-- In theory this might do the `make` step required after installing
+-- telescope-fzf-native.nvim. But I haven't tried it. If it doesn't:
+--      cd ~/.local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
+--      make
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		if
+			(ev.data.spec.name == "telescope-fzf-native.nvim")
+			and ((ev.data.kind == "install") or (ev.data.kind == "update"))
+		then
+			if not ev.data.active then
+				vim.cmd.packadd("telescope-fzf-native.nvim")
+			end
+
+			vim.system({ "make" }, { cwd = ev.data.path })
+		end
+	end,
+})
+
 vim.pack.add({
 	-- Dependencies:
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -10,9 +29,6 @@ vim.pack.add({
 })
 
 -- Optional dependency: fzf-native
--- After installing you'll need to do this manually:
---      cd ~/.local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
---      make
 if vim.fn.executable("make") == 1 then
 	vim.pack.add({
 		{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },

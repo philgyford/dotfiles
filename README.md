@@ -14,6 +14,8 @@ For each of the files/folders do something like:
 ## Neovim
 
     $ ln -s ~/Projects/personal/dotfiles/.config/nvim ~/.config/nvim
+    $ ln -s ~/Projects/personal/dotfiles/.config/nvim/lsp ~/.config/nvim/lsp
+    $ ln -s ~/Projects/personal/dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
 
 I also had to install at least these things using Homebrew, for various plugins:
 
@@ -28,9 +30,8 @@ And then:
     $ npm install -g @olrtg/emmet-language-server
     $ npm install -g @biomejs/biome
 
-And after installing the plugins, including Telescope, we need to manually do
-this build step for its optional fzf plugin (something Lazy.nvim could do, but
-vim.pack can't):
+And after installing the plugins, including Telescope, we *might* need to
+manually do this build step for its optional fzf plugin:
 
     $ cd ~/.local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
     $ make

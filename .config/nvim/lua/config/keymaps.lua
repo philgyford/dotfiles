@@ -106,7 +106,7 @@ map("n", "<leader>tw", "<cmd>set wrap!<CR>", {
 })
 
 -- vim.pack keymaps
-map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")
+map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>", { desc = "Update all Plugins" })
 map("n", "<leader>pd", function()
 	vim.ui.input({ prompt = "Plugin name to delete: " }, function(input)
 		if input and input ~= "" then
