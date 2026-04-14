@@ -66,7 +66,6 @@ Do `:checkhealth` to get a full report of any problems, or `:checkhealth
 
 1. Add a config file for it in `.config/nvim/lsp/`. See examples [at
    nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)
-2. At end of `.config/nvim/lua/config/lsp.lua` enable the server.
 3. Use `:MasonInstall <name>` to install the language server.
 
 #### 2. Add treesitter support
