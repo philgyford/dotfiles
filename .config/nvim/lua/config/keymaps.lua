@@ -168,3 +168,11 @@ end, { desc = "Spaces, 2 spaces" })
 vim.keymap.set("n", "\\S", function()
 	set_indent(4, 4, 4, true)
 end, { desc = "Spaces, 4 spaces" })
+
+-- Runs :restart and maintains the window layout, buffers, and cursor position.
+-- via https://www.reddit.com/r/neovim/comments/1shks8o/nvim_012s_new_restart_command_is_nice/
+vim.keymap.set("n", "<leader>R", function()
+	local session = vim.fn.stdpath("state") .. "/restart_session.vim"
+	vim.cmd("mksession! " .. vim.fn.fnameescape(session))
+	vim.cmd("restart source " .. vim.fn.fnameescape(session))
+end, { desc = "Restart Neovim" })
