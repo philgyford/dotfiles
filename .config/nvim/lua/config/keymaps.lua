@@ -94,6 +94,15 @@ map("n", "<D-x>", '"+dd')
 -- Insert clipboard content cleanly without leaving insert mode:
 map("i", "<D-v>", "<C-r>+")
 
+-- Development
+-- Jump to next/previous linter error/warning
+map("n", "]g", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end)
+map("n", "[g", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end)
+
 -- Visual --
 -- Stay in indent mode
 map("v", "<", "<gv", opts)
