@@ -98,7 +98,22 @@ alias m='./manage.py'
 
 alias c='code .'
 
-alias nv='open -a Neovide'
+alias nv='open -n -a Neovide'
+# Open neovide using `nv` and be able to pass files and arguments to it.
+# nv() {
+#   local files=()
+#   local args=()
+#
+#   for arg in "$@"; do
+#     if [[ "$arg" == -* ]]; then
+#       args+=("$arg")
+#     else
+#       files+=("$arg")
+#     fi
+#   done
+#
+#   open -n -a Neovide "${files[@]}" --args --no-tabs --reuse-instance --new-window "${args[@]}"
+# }
 
 # List all open network connections:
 alias connections='lsof -i | grep -E "(LISTEN|ESTABLISHED)"'
