@@ -159,3 +159,12 @@ vim.filetype.add({
 
 -- Used by e.g. Neovide
 opt.guifont = "Monaspace Neon NF:h12"
+
+-- Things only for neovide:
+if vim.g.neovide then
+	-- Make floating bars/windows have a blurred background
+	vim.opt.winblend = 100
+	vim.opt.pumblend = 100
+	vim.g.neovide_floating_blur_amount_x = 30
+	vim.g.neovide_floating_blur_amount_y = 30
+end
