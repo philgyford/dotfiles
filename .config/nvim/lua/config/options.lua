@@ -5,7 +5,7 @@ local opt = vim.opt
 opt.number = true -- Line numbers
 opt.relativenumber = true -- Relative line numbers
 opt.cursorline = true -- Highlight current line
-opt.wrap = false -- Don't wrap lines
+opt.wrap = true -- Wrap lines
 opt.whichwrap:append("<>[]hl") -- Allow cursor to move freely between lines in Normal mode
 opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
